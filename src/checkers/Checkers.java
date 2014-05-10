@@ -15,14 +15,15 @@ import java.util.Scanner;
 public class Checkers {
     String playerOneName;
     String playerTwoName;
-    String instructions = "This is a game of checkers. You will be playing"
-            + "against the other player.\nPeterThe object of the game is to capture"
-            + "all your opponents's pieces.\nYou can only move your pieces"
-            + "diagonally in the forward direction.\nYou take your opponent's"
-            + "pieces by 'jumping' over them with your piece.\nIf you get a"
-            + "piece to the other side of the board, you may claim a king-piece,\n"
+    /**String instructions = "This is a game of checkers. You will be playing"
+            + " against the other player.\nPeterThe object of the game is to capture"
+            + " all your opponents's pieces.\nYou can only move your pieces"
+            + " diagonally in the forward direction.\nYou take your opponent's "
+            + " pieces by 'jumping' over them with your piece.\nIf you get a"
+            + " piece to the other side of the board, you may claim a king-piece,\n"
             + "which may move diagonally in either the forward or backwards"
-            + "direction.\nLet's play!";
+            + " direction.\nLet's play!";*/
+    //instructions moved to HelpMenu
     public void getName(){
         Scanner input = new Scanner(System.in);
         System.out.println("Player One, please enter name: ");
@@ -30,9 +31,10 @@ public class Checkers {
         System.out.println("Player Two, please enter name: ");
         this.playerTwoName = input.next();
     }
-    public void displayHelp(){
+    /**public void displayHelp(){
         System.out.println(instructions);
-    }
+    }*/
+    //displayHelp() moved to HelpMenu
     /**
      * @param args the command line arguments
      */
@@ -40,9 +42,16 @@ public class Checkers {
         // TODO code application logic here
         Checkers myGame = new Checkers();
         Piece myPiece = new Piece();
+        MainMenu myMainMenu = new MainMenu();
+        HelpMenu myHelp = new HelpMenu();
+        Player player1 = new Player();
+        Player player2 = new Player();
         myGame.getName();
-        myGame.displayHelp();
+        //myGame.displayHelp();
         myPiece.outputPieceInfo();
+        myMainMenu.displayOptions();
+        myMainMenu.getUserChoice();
+        myHelp.displayHelp();
     }
     
 }
