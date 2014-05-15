@@ -12,7 +12,7 @@ package checkers;
  */
 public class HelpMenu extends Menu {
     String instructions = "This is a game of checkers. You will be playing"
-            + " against the other player.\nPeterThe object of the game is to capture"
+            + " against the other player.\nThe object of the game is to capture"
             + " all your opponents's pieces.\nYou can only move your pieces"
             + " diagonally in the forward direction.\nYou take your opponent's "
             + " pieces by 'jumping' over them with your piece.\nIf you get a"

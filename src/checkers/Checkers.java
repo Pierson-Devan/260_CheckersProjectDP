@@ -31,6 +31,9 @@ public class Checkers {
         System.out.println("Player Two, please enter name: ");
         this.playerTwoName = input.next();
     }
+    public void endGame(){
+        System.out.println("The game is over");
+    }
     /**public void displayHelp(){
         System.out.println(instructions);
     }*/
@@ -48,10 +51,21 @@ public class Checkers {
         Player player2 = new Player();
         myGame.getName();
         //myGame.displayHelp();
-        myPiece.outputPieceInfo();
+        /*myPiece.outputPieceInfo();
         myMainMenu.displayOptions();
         myMainMenu.getUserChoice();
-        myHelp.displayHelp();
+        myHelp.displayHelp();*/
+        String location = null;
+        player1.numberOfPieces= 12;
+        int tracker = player1.lowerPieceCount(location);
+        if (tracker == 0)
+            myGame.endGame();
+        else{
+            if(tracker !=99)
+                System.out.println("Number of Pieces: " +tracker);
+            else
+                System.out.println("Invalid value. Try again");
+        }
     }
     
 }

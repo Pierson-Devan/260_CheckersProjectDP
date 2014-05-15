@@ -29,4 +29,14 @@ public class Player {
         System.out.println(playerName + "'s number of pieces: " + numberOfCapturedPieces + "\n");
         System.out.println(playerName + "'s number of pieces: " + numberOfCapturedKings + "\n");
     }
+    public int lowerPieceCount(String location){
+        if (location != null)
+            return 99;
+        if (numberOfPieces <=1)
+            return 0;
+        numberOfPieces--;
+        return numberOfPieces;
+    }
 }
+
+    
