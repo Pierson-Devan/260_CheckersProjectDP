@@ -29,6 +29,24 @@ public class Player {
         System.out.println(playerName + "'s number of pieces: " + numberOfCapturedPieces + "\n");
         System.out.println(playerName + "'s number of pieces: " + numberOfCapturedKings + "\n");
     }
+    
+        /*Define the problem: The system needs to track the number of pieces still on the board, so it
+    can determine when the player gets to 0 that the other player wins. Given inputs: piece 
+    location equals null. Outputs: none. Tasks performed decrement numberOfPieces
+    Test: Ensure that when piece location equals null, that the decrement operator 
+    affects the numberOfPieces variable and decrements by one.
+    Test Cases: valid inputs: null, invalid inputs: not equal to null. 
+    The numberOfPieces cannot be less than 0 and cannot be greater than 12
+    
+    Pseudocode: 
+    Function lowerPieceCount (location) 
+    check to make sure the value of location is null
+    if not null then return
+    if null check to see if numberOfPieces is le 1 
+    if so, call endGame() and if not then minus 1 from numberOfPieces
+    
+    */  
+    
     public int lowerPieceCount(String location){
         if (location != null)
             return 99;
