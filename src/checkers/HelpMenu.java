@@ -8,7 +8,7 @@ package checkers;
 
 /**
  *
- * @author Devan
+ * @author Devan and Jennie
  */
 public class HelpMenu extends Menu {
     String instructions = "This is a game of checkers. You will be playing"

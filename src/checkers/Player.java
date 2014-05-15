@@ -8,7 +8,7 @@ package checkers;
 
 /**
  *
- * @author Devan
+ * @author Devan and Jennie
  */
 public class Player {
     String playerName = null;
