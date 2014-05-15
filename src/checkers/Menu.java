@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Devan
+ * @author Devan and Jennie
  */
 public abstract class Menu {
     boolean helpMenu = false;

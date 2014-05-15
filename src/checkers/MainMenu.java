@@ -5,7 +5,11 @@
  */
 
 package checkers;
-
+ 
+ /**
+ *
+ * @author Devan and Jennie
+ */
 
 public class MainMenu extends Menu {
     boolean playGame = false;
