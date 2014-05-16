@@ -16,8 +16,8 @@ public class Player {
     int numberOfKings = 0;
     int numberOfCapturedPieces = 0;
     int numberOfCapturedKings = 0;
-    int ratioLostToCaptured = 0;
-    double numberOfPiecesLost = 0;
+    double ratioLostToCaptured = 0;
+    int numberOfPiecesLost = 0;
     
     public void outputPlayerInfo(){
         if(playerName != null)
