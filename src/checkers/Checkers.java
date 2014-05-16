@@ -56,15 +56,13 @@ public class Checkers {
         myMainMenu.getUserChoice();
         myHelp.displayHelp();*/
         String location = null;
-        player1.numberOfPieces= 12;
+        player1.numberOfPieces= 1;
         int tracker = player1.lowerPieceCount(location);
         if (tracker == 0)
             myGame.endGame();
         else{
-            if(tracker !=99)
+            if(tracker !=-99)
                 System.out.println("Number of Pieces: " +tracker);
-            else
-                System.out.println("Invalid value. Try again");
         }
     }
     
