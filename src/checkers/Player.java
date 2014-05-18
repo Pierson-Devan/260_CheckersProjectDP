@@ -18,6 +18,7 @@ public class Player {
     int numberOfCapturedKings = 0;
     double ratioLostToCaptured = 0;
     int numberOfPiecesLost = 0;
+    int numberOfKingsLost = 0;
     
     public void outputPlayerInfo(){
         if(playerName != null)
@@ -70,6 +71,15 @@ public class Player {
                     + "resovlve this error, please capture some of your"
                     + " opponent's pieces");
         return numberOfPieces;
+    }
+    public int increaseNumberOfCapturedPieces(){
+        if(numberOfCapturedPieces >= 0 && numberOfCapturedPieces < 12){
+            numberOfCapturedPieces ++;
+            ratioLostToCaptured = (int)(numberOfPiecesLost / numberOfCapturedPieces);
+            return numberOfCapturedPieces;
+        }
+        System.out.println("An Error has occured.\n\tAn invalid value was found");
+        return -99;
     }
 }
 
