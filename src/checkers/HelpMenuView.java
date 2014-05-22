@@ -46,7 +46,7 @@ public class HelpMenuView {
             
             switch (command) {
                 case "B":
-                    this.helpMenuControl.displayBoardHelp();
+                    helpMenuControl.displayBoardHelp();
                     break;
                 case "G":
                     this.helpMenuControl.displayGameHelp();
@@ -63,8 +63,7 @@ public class HelpMenuView {
                 case "Q": 
                     break;
                 default: 
-                    new CheckersError().displayError("Invalid option. Please enter a valid option.");
-                    continue;
+                    System.out.println("Invalid option. Please enter a valid option.");
             }
         } while (!command.equals("Q"));  
         
@@ -80,7 +79,8 @@ public class HelpMenuView {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
-    } 
+    }
+}
     
 /*    String instructions = "This is a game of checkers. You will be playing"
             + " against the other player.\nThe object of the game is to capture"

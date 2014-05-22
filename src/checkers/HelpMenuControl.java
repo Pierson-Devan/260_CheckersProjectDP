@@ -11,21 +11,19 @@ package checkers;
  * @author Tails2
  */
 public class HelpMenuControl {
-    public HelpMenuControl() {
-        
-    } 
-}
 
-public class HelpMenuControl  {
+    HelpMenuControl() {
+    }
+
 
     public void displayBoardHelp() {
         System.out.println();
         this.displayHelpBorder();             
         System.out.println( 
                 "\tThe game board for Checkers consists of a two-color grid that is 8 rows by 8 columns. "
-                + "\n\t Players begin with twelve pieces occupying the white tiles closest to them."
-                + "\n\Players move diagonally only on the white tiles. They can move one space, or "
-                + "\n\jump one opposing player's piece.");
+                + "\n\tPlayers begin with twelve pieces occupying the white tiles closest to them."
+                + "\n\tPlayers move diagonally only on the white tiles. They can move one space, or "
+                + "\n\tjump one opposing player's piece.");
         displayHelpBorder();
     }
     
@@ -43,7 +41,7 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
             
-    public void displayRealPlayerHelp() {
+    public void displayPlayerHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -52,18 +50,7 @@ public class HelpMenuControl  {
                 ); 
         displayHelpBorder();
     }
-    
-                   
-    public void displayComputerPlayerHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-                "\tA computer based player automatically takes its turn "
-                + "\n\timmediatly after a real player in a single player game."
-                ); 
-        displayHelpBorder();
-    }
-             
+      
     public void displayLocationHelp() {
         System.out.println();
         displayHelpBorder();     
