@@ -8,13 +8,8 @@ package checkers;
 
 /**
  *
- * @author Tails2
+ * @authors Devan and Jennie
  */
-public class HelpMenuControl {
-    public HelpMenuControl() {
-        
-    } 
-}
 
 public class HelpMenuControl  {
 
@@ -24,8 +19,8 @@ public class HelpMenuControl  {
         System.out.println( 
                 "\tThe game board for Checkers consists of a two-color grid that is 8 rows by 8 columns. "
                 + "\n\t Players begin with twelve pieces occupying the white tiles closest to them."
-                + "\n\Players move diagonally only on the white tiles. They can move one space, or "
-                + "\n\jump one opposing player's piece.");
+                + "\n\t Players move diagonally only on the white tiles. They can move one space, or "
+                + "\n\t jump one opposing player's piece.");
         displayHelpBorder();
     }
     
@@ -43,32 +38,23 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
             
-    public void displayRealPlayerHelp() {
+    public void displayPlayerHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
-                "\tA real player manually takes their turn by placing their mark "
-                + "\n\tin an unused location on the board."
+                "\tA player manually takes their turn by moving one of their "
+                + "\n pieces on the board. Before the player has a king, he can"
+                + "\n only move forward on the board."
                 ); 
         displayHelpBorder();
     }
     
-                   
-    public void displayComputerPlayerHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-                "\tA computer based player automatically takes its turn "
-                + "\n\timmediatly after a real player in a single player game."
-                ); 
-        displayHelpBorder();
-    }
              
     public void displayLocationHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
-               "\tA location on the board where a player can place their marker"
+               "\tAny location on the board where a player can move."
                 ); 
         displayHelpBorder();
     }
@@ -77,9 +63,9 @@ public class HelpMenuControl  {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
-               "\tA symbol that \"marks\" the locations in the board that are occupied "
-                + "by a player. "
-                + "\n\tThe default markers are \"X\" and \"O\"."
+               "\tA symbol that \"marks\" the locations on the board that are occupied "
+                + "by a player. The  "
+                + "\n\tThe default markers will be \"X\" and \"O\"."
                 ); 
         displayHelpBorder();
     }
