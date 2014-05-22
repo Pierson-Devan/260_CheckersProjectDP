@@ -23,7 +23,7 @@ public class Checkers {
             + " piece to the other side of the board, you may claim a king-piece,\n"
             + "which may move diagonally in either the forward or backwards"
             + " direction.\nLet's play!";*/
-    //instructions moved to HelpMenu
+    //instructions moved to HelpMenuView
     public void getName(){
         Scanner input = new Scanner(System.in);
         System.out.println("Player One, please enter name: ");
@@ -37,7 +37,7 @@ public class Checkers {
     /**public void displayHelp(){
         System.out.println(instructions);
     }*/
-    //displayHelp() moved to HelpMenu
+    //displayHelp() moved to HelpMenuView
     /**
      * @param args the command line arguments
      */
@@ -46,7 +46,7 @@ public class Checkers {
         Checkers myGame = new Checkers();
         Piece myPiece = new Piece();
         MainMenu myMainMenu = new MainMenu();
-        HelpMenu myHelp = new HelpMenu();
+        HelpMenuView myHelp = new HelpMenuView();
         Player player1 = new Player();
         Player player2 = new Player();
         myGame.getName();
