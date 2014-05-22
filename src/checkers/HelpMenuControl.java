@@ -23,18 +23,20 @@ public class HelpMenuControl  {
                 + "\n\t jump one opposing player's piece.");
         displayHelpBorder();
     }
-    
-    
-        
-    public void displayGameHelp() {
+ 
+        public void displayGameHelp() {
         System.out.println();
-        displayHelpBorder();     
+        this.displayHelpBorder();             
         System.out.println( 
-                 "\tThe objective of the game is to be the first player to mark three "
-                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
-                + "\n\tturns placing their marker in one of the locations on the "
-                + "\n\tboard. The first player to get \"three-in-a-row\" is the winner."
-                ); 
+               "\tThis is a game of checkers. You will be playing"
+            + "\n against the other player.The object of the game is to capture"
+            + "\n all your opponents's pieces.You can only move your pieces"
+            + "\n diagonally in the forward direction. You take your opponent's "
+            + "\n pieces by 'jumping' over them with your piece. If you get a"
+            + "\n piece to the other side of the board, you may claim a "
+            + "\n king-piece, which may move diagonally in either the forward "
+            + "\n or backwards direction."
+            + "\n Let's play!");
         displayHelpBorder();
     }
             
