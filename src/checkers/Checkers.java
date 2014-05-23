@@ -24,13 +24,7 @@ public class Checkers {
             + "which may move diagonally in either the forward or backwards"
             + " direction.\nLet's play!";*/
     //instructions moved to HelpMenuView
-    public void getName(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Player One, please enter name: ");
-        this.playerOneName = input.next();
-        System.out.println("Player Two, please enter name: ");
-        this.playerTwoName = input.next();
-    }
+
     public void endGame(){
         System.out.println("The game is over");
     }
@@ -49,12 +43,14 @@ public class Checkers {
         HelpMenuView myHelp = new HelpMenuView();
         Player player1 = new Player();
         Player player2 = new Player();
-        myGame.getName();
+        GameMenuVeiw gmv = new GameMenuVeiw();  
+        player1.getName();
+        player2.getName();
         //myGame.displayHelp();
         /*myPiece.outputPieceInfo();
         myMainMenu.displayOptions();
         myMainMenu.getUserChoice();
-        myHelp.displayHelp();*/
+        myHelp.displayHelp();
         String location = null;
         player1.numberOfPieces= 12;
         myPiece.location = null;
@@ -73,7 +69,8 @@ public class Checkers {
         else{
             if(tracker !=-99)
                 System.out.println(myGame.playerOneName + "\'s Number of Pieces: " +tracker);
-        }
+        }*/
+        gmv.getInput();
     }
     
 }

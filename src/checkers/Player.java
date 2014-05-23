@@ -6,6 +6,8 @@
 
 package checkers;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Devan and Jennie
@@ -19,6 +21,13 @@ public class Player {
     double ratioLostToCaptured = 0;
     int numberOfPiecesLost = 0;
     int numberOfKingsLost = 0;
+    
+        public void getName(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter new player's name: ");
+        playerName = input.nextLine();
+        
+    }
     
     public void outputPlayerInfo(){
         if(playerName != null)
@@ -81,6 +90,11 @@ public class Player {
         System.out.println("An Error has occured.\n\tAn invalid value was found");
         return -99;
     }
+    
+    public String getPlayerStats(){
+        String stats ="getPlayerStats() has been called";
+        return stats;
+ }
 }
 
     
