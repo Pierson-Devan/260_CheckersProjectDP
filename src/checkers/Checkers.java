@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Checkers {
     String playerOneName;
     String playerTwoName;
+    
     /**String instructions = "This is a game of checkers. You will be playing"
             + " against the other player.\nPeterThe object of the game is to capture"
             + " all your opponent's pieces.\nYou can only move your pieces"
