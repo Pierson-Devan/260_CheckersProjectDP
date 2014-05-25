@@ -15,12 +15,14 @@ import java.util.Scanner;
 public class GameMenuVeiw {
     Checkers game = new Checkers();
     GameMenuControl gameMenuCont = new GameMenuControl();
+    OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
         {"N", "New Game"},
         {"R", "Report stastics"},
         {"H", "Help"},
+        {"O", "Options Menu"},
         {"Q", "QUIT"}
     };
     
@@ -48,6 +50,9 @@ public class GameMenuVeiw {
                     break;
                 case "H":
                     gameMenuCont.displayHelpMenu();
+                    break;
+                case "O":
+                    gameMenuCont.displayOptionsMenu();
                     break;
                 case "Q":                   
                     break;

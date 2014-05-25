@@ -38,6 +38,10 @@ public class GameMenuControl {
         helpMenu.getInput();
     }
     
+    public void displayOptionsMenu() {
+        OptionsMenuView newoptions = new OptionsMenuView();
+        newoptions.getInput();
+    }    
     
     
 }
