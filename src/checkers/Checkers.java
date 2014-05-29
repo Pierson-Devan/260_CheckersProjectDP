@@ -40,7 +40,6 @@ public class Checkers {
         // TODO code application logic here
         Checkers myGame = new Checkers();
         Piece myPiece = new Piece();
-        MainMenu myMainMenu = new MainMenu();
         HelpMenuView myHelp = new HelpMenuView();
         Player player1 = new Player();
         Player player2 = new Player();
@@ -70,7 +69,10 @@ public class Checkers {
         else{
             if(tracker !=-99)
                 System.out.println(myGame.playerOneName + "\'s Number of Pieces: " +tracker);
+        
+        
         }*/
+        
         gmv.getInput();
     }
     
