@@ -69,7 +69,10 @@ public class Checkers {
         else{
             if(tracker !=-99)
                 System.out.println(myGame.playerOneName + "\'s Number of Pieces: " +tracker);
+        
+        
         }*/
+        
         gmv.getInput();
     }
     
