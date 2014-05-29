@@ -42,6 +42,7 @@ public class Checkers {
         Piece myPiece = new Piece();
         HelpMenuView myHelp = new HelpMenuView();
         Player player1 = new Player();
+        player1.isPlayerOne = true;
         Player player2 = new Player();
         GameMenuView gmv = new GameMenuView();  
         player1.getName();

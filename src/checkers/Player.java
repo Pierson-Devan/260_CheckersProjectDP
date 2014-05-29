@@ -21,6 +21,7 @@ public class Player {
     double ratioLostToCaptured = 0;
     int numberOfPiecesLost = 0;
     int numberOfKingsLost = 0;
+    boolean isPlayerOne = false;
     
         public void getName(){
         Scanner input = new Scanner(System.in);
