@@ -16,6 +16,7 @@ public class GameMenuView {
     Checkers game = new Checkers();
     GameMenuControl gameMenuCont = new GameMenuControl();
     OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
+
     
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
@@ -26,7 +27,7 @@ public class GameMenuView {
         {"Q", "QUIT"}
     };
     
-    public void getInput() {
+    public void getInput(Player player) {
    
         String input;
         Scanner inFile = new Scanner(System.in);
@@ -40,7 +41,7 @@ public class GameMenuView {
             
             switch (input) {
                 case "T":
-                    this.gameMenuCont.takeTurn();
+                    this.gameMenuCont.takeTurn(player);
                     break;
                 case "N":
                     gameMenuCont.startGame();
@@ -72,4 +73,6 @@ public class GameMenuView {
         }
         System.out.println("\t===============================================================\n");
     }
+
+    
 }

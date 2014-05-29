@@ -97,9 +97,6 @@ public class Player {
         String stats ="getPlayerStats() has been called";
         return stats;
  }
-    public void startTurn(){
-        gmv.getInput();
-    }
 }
 
     
