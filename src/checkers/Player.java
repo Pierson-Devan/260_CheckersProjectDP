@@ -22,6 +22,7 @@ public class Player {
     int numberOfPiecesLost = 0;
     int numberOfKingsLost = 0;
     boolean isPlayerOne = false;
+    GameMenuView gmv = new GameMenuView();
     
         public void getName(){
         Scanner input = new Scanner(System.in);
@@ -96,6 +97,9 @@ public class Player {
         String stats ="getPlayerStats() has been called";
         return stats;
  }
+    public void startTurn(){
+        gmv.getInput();
+    }
 }
 
     
