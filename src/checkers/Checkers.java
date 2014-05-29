@@ -44,7 +44,7 @@ public class Checkers {
         HelpMenuView myHelp = new HelpMenuView();
         Player player1 = new Player();
         Player player2 = new Player();
-        GameMenuVeiw gmv = new GameMenuVeiw();  
+        GameMenuView gmv = new GameMenuView();  
         player1.getName();
         player2.getName();
         //myGame.displayHelp();

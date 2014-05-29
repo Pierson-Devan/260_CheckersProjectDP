@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Devan
  */
-public class GameMenuVeiw {
+public class GameMenuView {
     Checkers game = new Checkers();
     GameMenuControl gameMenuCont = new GameMenuControl();
     OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
