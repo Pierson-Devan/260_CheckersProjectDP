@@ -6,6 +6,8 @@
 
 package checkers;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tails2
@@ -33,6 +35,20 @@ int locVert=2;
     else return false;
     }
     
-    
-
+    void makeBoardHorizLocations(){
+        ArrayList[] boardHorizLocations = new ArrayList[8];
+        int filler = 1;
+        for(int count = 0; count < 8; count ++){
+            boardHorizLocations[count].add(filler);
+            filler ++;
+        }
+    }
+    void makeBoardVertLocations(){
+        ArrayList[] boardVertLocations = new ArrayList[8];
+        int filler = 1;
+        for(int count = 0; count < 8; count ++){
+            boardVertLocations[count].add(filler);
+            filler ++;
+        }
+    }
 }

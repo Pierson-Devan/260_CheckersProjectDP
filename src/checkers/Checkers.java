@@ -41,6 +41,7 @@ public class Checkers {
         Checkers myGame = new Checkers();
         Piece myPiece = new Piece();
         HelpMenuView myHelp = new HelpMenuView();
+        Board myBoard = new Board();
         Player playerOne = new Player();
         playerOne.isPlayerOne = true;
         Player player2 = new Player();
@@ -49,6 +50,8 @@ public class Checkers {
         player2.getName();
         gmv.getInput(playerOne);
         gmv.getInput(player2);
+        myBoard.makeBoardHorizLocations();
+        myBoard.makeBoardVertLocations();
         //myGame.displayHelp();
         /*myPiece.outputPieceInfo();
         myMainMenu.displayOptions();
