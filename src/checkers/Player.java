@@ -24,11 +24,12 @@ public class Player {
     boolean isPlayerOne = false;
     GameMenuView gmv = new GameMenuView();
     
-        public void getName(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter new player's name: ");
-        playerName = input.nextLine();
-        
+public void getName(){
+    Scanner input = new Scanner(System.in);
+    PlayerList myList = new PlayerList();
+    System.out.println("Please enter new player's name: ");
+    playerName = input.nextLine();
+    myList.getPlayerArray(playerName);         
     }
     
     public void outputPlayerInfo(){
