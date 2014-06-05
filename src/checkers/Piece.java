@@ -30,14 +30,3 @@ public class Piece {
                 + "Piece is Captured: " +isCaptured);
     }
 }
-
-
-
-
-void makeBoardVertLocations(){
-        ArrayList[] boardVertLocations = new ArrayList[8];
-        int filler = 1;
-        for(int count = 0; count < 8; count ++){
-            boardVertLocations[count].add(filler);
-            filler ++;
-}
