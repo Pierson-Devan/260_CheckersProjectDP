@@ -10,7 +10,7 @@ package checkers;
 public class PlayerList {
     
     public String[] listOfPlayers = new String[50];
-    int endMarker = 0;
+    int endMarker = 0; //keeps track of which slot in the array next value goes in
     
     public void getPlayerArray(String name){
         listOfPlayers[endMarker] = name;
@@ -21,7 +21,7 @@ public class PlayerList {
     public void sortPlayerList(){
         String temp;
         for (int counter = 0; counter < listOfPlayers.length - 1; counter++){
-            for (int incrementor = 0; incrementor < listOfPlayers.length; incrementor ++){
+            for (int incrementor = counter + 1; incrementor < listOfPlayers.length; incrementor ++){
                 if (listOfPlayers[counter].compareToIgnoreCase(listOfPlayers[incrementor]) > 0){
                     temp = listOfPlayers[counter];
                     listOfPlayers[counter] = listOfPlayers[incrementor];
