@@ -51,4 +51,12 @@ int locVert=2;
             filler ++;
         }
     }
+    
+    void unavailableBoardLocations(){
+        boolean[] boardVertLocations = new boolean[64];
+        for(int i=0, h=0; i < 8; i=i+2){
+            boardVertLocations[i]=false;
+            if (i==7)h++;i=0; 
+        }
+    }
 }
