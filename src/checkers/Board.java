@@ -67,12 +67,39 @@ public void displayBoard(){
             filler ++;
         }
     }
-    
+/*    
     void unavailableBoardLocations(){
-        boolean[] boardVertLocations = new boolean[64];
-        for(int i=0, h=0; i < 8; i=i+2){
-            boardVertLocations[i]=false;
-            if (i==7)h++;i=0; 
+        boolean[] boardLocations = new boolean[64];
+        for(int row=0; row<8; row=row+2){
+            for (int col=0; col < 8; col++){
+                boardLocations[row]=false;
+            }
+        }
+    }
+    */
+    
+    //New unavailableBoardLocations with for each
+    void unavailableBoardLocations(){    
+    boolean[][] availableBoardLocations = new boolean[8][8];
+        
+        for (int r=0; r<8; r++){
+            for(int c=0; c<8; c++){
+                availableBoardLocations[r][c]=false;
+                c++;
+                availableBoardLocations[r][c]=true;
+            }
+            r++;
+            for(int c=0;c<8; c++){
+                availableBoardLocations[r][c]=true;
+                c++;
+                availableBoardLocations[r][c]=false;
+            }
+            
+        }
+        
+        for (boolean[] q : availableBoardLocations){
+            System.out.println(q);
         }
     }
 }
+    
