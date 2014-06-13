@@ -9,6 +9,10 @@ package checkers;
 
 public class PlayerList {
     
+    public PlayerList(){
+    
+    }
+    
     public String[] listOfPlayers = new String[50];
     int endMarker = 0; //keeps track of which slot in the array next value goes in
     
@@ -34,7 +38,7 @@ public class PlayerList {
     public void outputPlayerList(){
         for (int count = 0; count < listOfPlayers.length; count ++){
             System.out.println("The players in the system are: \n");
-            System.out.println(listOfPlayers[count] + " , ");
+            System.out.println(listOfPlayers[count] + " \n");
         }
     }
 }

@@ -14,10 +14,11 @@ import java.util.Scanner;
  * @author Devan
  */
 public class GameMenuControl {
-        Checkers game = new Checkers();
-        Player player1 = new Player();
-        Player player2 = new Player();
-        Piece testPiece = new Piece();
+        private Board board;
+    
+    public GameMenuControl(Board board){
+        this. board = board;
+    }
     
     public void takeTurn(Player player) {
         getValidInput(player);
@@ -28,12 +29,10 @@ public class GameMenuControl {
         System.out.println("\n\tstartGame() has been called");
     }
     
-    public void displayStats() {
-        String player1Stats = player1.getPlayerStats();
-        String player2Stats = player2.getPlayerStats();
+    public void displayStats(Player player) {
+        String playerStats = player.getPlayerStats();
         System.out.println("\n\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("\t " + player1Stats);
-        System.out.println("\n\t " + player2Stats);
+        System.out.println("\t " + playerStats);
         System.out.println("\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     }
     
@@ -51,14 +50,16 @@ public class GameMenuControl {
         int pieceId = 0;
         int horizLoc = 0;
         int vertLoc = 0;
-        int pieceCurrentHorizLoc = 0;
-        int pieceCurrentVertLoc =0;
+        int pieceCurrentHorizLoc = player.piece[pieceId].locationHori;
+        int pieceCurrentVertLoc = player.piece[pieceId].locationVert;
         boolean valid = false;
-        while (valid == false ){
+        while (!valid){
             Scanner inFile = new Scanner(System.in);
             System.out.println("Please enter the id number of the piece you wish to move: ");
             input = inFile.nextLine();
             pieceId = parseInt(input);
+            System.out.println(player.piece[pieceId].locationHori);
+            System.out.println(player.piece[pieceId].locationVert);
             System.out.println("Please enter the horizontal location you wish to move to: ");
             input = inFile.nextLine();
             horizLoc = parseInt(input);
@@ -67,8 +68,7 @@ public class GameMenuControl {
             //this line will read a future array of all the player's pieces to
             //find the one with the name that matches the input on line 59
             vertLoc = parseInt(input);
-            pieceCurrentHorizLoc = testPiece.locationHori;
-            pieceCurrentVertLoc = testPiece.locationVert;
+            System.out.println(horizLoc + " " + vertLoc);
             if (pieceCurrentHorizLoc == 0 || pieceCurrentVertLoc == 0){
                 System.out.println("Invalid piece. Please try again");
                 continue;
@@ -77,14 +77,18 @@ public class GameMenuControl {
                 if(vertLoc < 9 && horizLoc > 0){
                     if(player.isPlayerOne == true){
                         if(pieceCurrentHorizLoc + 1 == horizLoc  || pieceCurrentHorizLoc -1 == horizLoc){
-                            if(pieceCurrentVertLoc + 1 == vertLoc)
+                            if(pieceCurrentVertLoc + 1 == vertLoc){
                                 valid = true;
+                                break;
+                            }
                         }    
                     }
                     else{
                         if(pieceCurrentHorizLoc + 1 == horizLoc  || pieceCurrentHorizLoc -1 == horizLoc){
-                            if(pieceCurrentVertLoc - 1 == vertLoc)
-                                valid = true; 
+                            if(pieceCurrentVertLoc - 1 == vertLoc){
+                                valid = true;
+                                break;
+                            }
                         }
                     }
                 }

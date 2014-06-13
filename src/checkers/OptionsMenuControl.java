@@ -10,9 +10,10 @@ public class OptionsMenuControl {
     boolean bSound = false;
     boolean bTimed = false;
 
-    OptionsMenuControl() {
+    public OptionsMenuControl(){
+    
     }
-
+    
 
     public void displaySoundControls() {
         bSound=true;

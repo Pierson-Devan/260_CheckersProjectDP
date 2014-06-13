@@ -18,18 +18,27 @@ public class Player {
     int numberOfKings = 0;
     int numberOfCapturedPieces = 0;
     int numberOfCapturedKings = 0;
+    int count = 0;
     double ratioLostToCaptured = 0;
     int numberOfPiecesLost = 0;
     int numberOfKingsLost = 0;
     boolean isPlayerOne = false;
-    GameMenuView gmv = new GameMenuView();
+    Piece[] piece = new Piece[12];
+    
+    
+    public Player(){
+        for (int x = 0; x <piece.length; x++){
+            piece[x]= new Piece();
+            piece[x].pieceName= x;
+        }
+    }
     
 public void getName(){
     Scanner input = new Scanner(System.in);
     PlayerList myList = new PlayerList();
     System.out.println("Please enter new player's name: ");
     playerName = input.nextLine();
-    myList.getPlayerArray(playerName);         
+    //myList.getPlayerArray(playerName);         
     }
     
     public void outputPlayerInfo(){

@@ -22,6 +22,7 @@ public class OptionsMenuView {
        
     };
     
+    
     // Create instance of the HelpMenuControl (action) class
     private final OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     

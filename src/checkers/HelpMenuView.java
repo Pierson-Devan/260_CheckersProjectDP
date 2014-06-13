@@ -22,6 +22,8 @@ public class HelpMenuView {
         {"Q", "Quit Help"}        
     };
     
+    
+    
     // Create instance of the HelpMenuControl (action) class
     private final HelpMenuControl helpMenuControl = new HelpMenuControl();
     

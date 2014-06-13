@@ -13,11 +13,12 @@ import java.util.Scanner;
  * @author Devan and Jennie
  */
 public class Checkers {
+    /*
     String playerOneName;
     String playerTwoName;
     
-    /**String instructions = "This is a game of checkers. You will be playing"
-            + " against the other player.\nPeterThe object of the game is to capture"
+    String instructions = "This is a game of checkers. You will be playing"
+            + " against the other player.\nThe object of the game is to capture"
             + " all your opponent's pieces.\nYou can only move your pieces"
             + " diagonally in the forward direction.\nYou take your opponent's "
             + " pieces by 'jumping' over them with your piece.\nIf you get a"
@@ -25,7 +26,9 @@ public class Checkers {
             + "which may move diagonally in either the forward or backwards"
             + " direction.\nLet's play!";*/
     //instructions moved to HelpMenuView
-
+    public void display(){
+        System.out.println("Welcome to Checkers!");
+    }
     public void endGame(){
         System.out.println("The game is over");
     }
@@ -37,8 +40,11 @@ public class Checkers {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Checkers myGame = new Checkers();
+        myGame.display();
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();
+        /*
         Piece myPiece = new Piece();
         HelpMenuView myHelp = new HelpMenuView();
         Board myBoard = new Board();

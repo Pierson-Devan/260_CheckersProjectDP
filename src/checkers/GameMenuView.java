@@ -13,11 +13,16 @@ import java.util.Scanner;
  * @author Devan
  */
 public class GameMenuView {
-    Checkers game = new Checkers();
-    GameMenuControl gameMenuCont = new GameMenuControl();
-    OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
-
+    private Player player;
+    private Board board;
+    private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
+    private GameMenuControl gameControl;
     
+    public GameMenuView(Board board) {
+        this.board = board;
+        this.gameControl = new GameMenuControl(board);
+        
+    }
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
         {"N", "New Game"},
@@ -27,41 +32,43 @@ public class GameMenuView {
         {"Q", "QUIT"}
     };
     
-    public void getInput(Player player) {
-   
+    public boolean getInput(Player player){
+        this.player = player;
         String input;
-        Scanner inFile = new Scanner(System.in);
-
+        Scanner scan = new Scanner(System.in);
+        boolean testInput = true;
         do {    
+            board.displayBoard();
             this.display(); // display the menu
 
             // get commaned entered
-            input = inFile.nextLine();
+            input = scan.nextLine();
             input = input.trim().toUpperCase();
-            
             switch (input) {
                 case "T":
-                    this.gameMenuCont.takeTurn(player);
+                    this.gameControl.takeTurn(player);
                     break;
                 case "N":
-                    gameMenuCont.startGame();
+                    gameControl.startGame();
                     break;
                 case "R":
-                    gameMenuCont.displayStats();
+                    gameControl.displayStats(player);
                     break;
                 case "H":
-                    gameMenuCont.displayHelpMenu();
+                    gameControl.displayHelpMenu();
                     break;
                 case "O":
-                    gameMenuCont.displayOptionsMenu();
+                    gameControl.displayOptionsMenu();
                     break;
-                case "Q":                   
+                case "Q": 
+                    testInput = false;
                     break;
                 default: 
-                    System.out.println("Invalid command. Please enter a valid command.");
+                    System.out.println("Invalid command. Please enter a valid command.\n");
                     continue; 
             }
-        } while (!input.equals("Q"));
+        } while (!input.equals("Q") || !input.equals("T"));
+        return testInput;
     }
     
     public final void display() {
@@ -73,6 +80,4 @@ public class GameMenuView {
         }
         System.out.println("\t===============================================================\n");
     }
-
-    
 }

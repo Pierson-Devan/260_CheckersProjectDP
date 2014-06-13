@@ -18,10 +18,14 @@ package checkers;
 public class Piece {
     String color;
     int pieceName;
-    Boolean isKing = false;//marks whether a given piece is normal or a king
+    boolean isKing = false;//marks whether a given piece is normal or a king
     int locationVert = 5;//see comment above class header
     int locationHori = 3;//see comment above class header
-    Boolean isCaptured = false;//stores if the piece is captured or not
+    boolean isCaptured = false;//stores if the piece is captured or not
+    
+    public Piece(){
+    
+    }
     
     /**outputs the values in all default variables*/
     public void outputPieceInfo(){
