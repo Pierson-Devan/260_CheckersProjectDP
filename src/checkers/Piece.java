@@ -19,8 +19,8 @@ public class Piece {
     String color;
     int pieceName;
     boolean isKing = false;//marks whether a given piece is normal or a king
-    int locationVert = 5;//see comment above class header
-    int locationHori = 3;//see comment above class header
+    int locationVert = 0;//see comment above class header
+    int locationHori = 0;//see comment above class header
     boolean isCaptured = false;//stores if the piece is captured or not
     
     public Piece(){
