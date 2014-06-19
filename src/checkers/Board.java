@@ -6,6 +6,8 @@
 
 package checkers;
 
+import java.io.Serializable;
+import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Tails2
  */
-public class Board {
+public class Board implements Serializable {
 private int boardLocations[][];
 
 public void displayBoard(){

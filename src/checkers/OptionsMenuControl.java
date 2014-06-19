@@ -1,12 +1,12 @@
 
 package checkers;
-
+import java.io.Serializable;
 /**
  *
  * @author Jennie
  */
 
-public class OptionsMenuControl {
+public class OptionsMenuControl implements Serializable {
     boolean bSound = false;
     boolean bTimed = false;
 

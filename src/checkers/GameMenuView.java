@@ -7,12 +7,13 @@
 package checkers;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
 /**
  *
  * @author Devan
  */
-public class GameMenuView {
+public class GameMenuView implements Serializable {
     private Board board;
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     private GameMenuControl gameControl;

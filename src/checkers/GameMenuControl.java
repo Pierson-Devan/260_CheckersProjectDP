@@ -5,13 +5,13 @@
  */
 
 package checkers;
-
+import java.io.Serializable;
 
 /**
  *
  * @author Devan
  */
-public class GameMenuControl {
+public class GameMenuControl implements Serializable {
         private Board board;
     
     public GameMenuControl(Board board){

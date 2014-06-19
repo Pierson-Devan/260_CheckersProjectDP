@@ -7,12 +7,12 @@
 package checkers;
 
 import java.util.Scanner;
-
+import java.io.Serializable;
 /**
  *
  * @author Devan and Jennie
  */
-public class Checkers {
+public class Checkers implements Serializable {
     private static Player player1 = new Player();
     private static Player player2 = new Player();
     

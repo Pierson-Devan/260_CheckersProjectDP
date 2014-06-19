@@ -5,12 +5,12 @@
  */
 
 package checkers;
-
+import java.io.Serializable;
 /**
  *
  * @author Devan
  */
-public class Game {
+public class Game implements Serializable {
 
     PlayerList playerList = new PlayerList();
     Player player1 = Checkers.getPlayer1();

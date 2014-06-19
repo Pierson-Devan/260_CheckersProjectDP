@@ -5,13 +5,14 @@
  */
 
 package checkers;
+import java.io.Serializable;
 
 /**
  *
  * @authors Devan and Jennie
  */
 
-public class HelpMenuControl {
+public class HelpMenuControl implements Serializable {
 
 
     HelpMenuControl() {

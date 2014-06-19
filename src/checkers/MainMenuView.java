@@ -7,12 +7,12 @@
 package checkers;
 
 import java.util.Scanner;
-
+import java.io.Serializable;
 /**
  *
  * @author Devan and Jennie
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable {
     boolean helpMenu = false;
     boolean quit = false;
     int userChoice;

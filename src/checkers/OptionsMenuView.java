@@ -7,12 +7,12 @@
 package checkers;
 
 import java.util.Scanner;
-
+import java.io.Serializable;
 /**
  *
  * @author Jennie
  */
-public class OptionsMenuView {
+public class OptionsMenuView implements Serializable {
     private final static String[][] menuItems = {
         {"S", "Turn Sound On"}, 
         {"T", "Timed Game"},

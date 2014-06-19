@@ -5,12 +5,12 @@
  */
 
 package checkers;
-
+import java.io.Serializable;
 /**
  *
  * @author Devan
  */
-public class MainMenuControl {
+public class MainMenuControl implements Serializable {
     
     public void displayHelpMenu(){
         HelpMenuView helpMenu = new HelpMenuView();

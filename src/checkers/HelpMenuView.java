@@ -7,12 +7,12 @@
 package checkers;
 
 import java.util.Scanner;
-
+import java.io.Serializable;
 /**
  *
  * @author Devan and Jennie
  */
-public class HelpMenuView {
+public class HelpMenuView implements Serializable {
     private final static String[][] menuItems = {
         {"B", "The board"}, 
         {"G", "The Checkers game"},
