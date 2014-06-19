@@ -18,8 +18,8 @@ public class GameMenuControl {
         this. board = board;
     }
     
-    public void takeTurn(Player player) {
-        board.getValidInput(player);
+    public void takeTurn(boolean playerType) {
+        board.getValidInput(playerType);
     }
    
       
@@ -27,7 +27,8 @@ public class GameMenuControl {
         System.out.println("\n\tstartGame() has been called");
     }
     
-    public void displayStats(Player player) {
+    public void displayStats(boolean playerType) {
+        Player player = Checkers.getPlayer(playerType);
         String playerStats = player.getPlayerStats();
         System.out.println("\n\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("\t " + playerStats);

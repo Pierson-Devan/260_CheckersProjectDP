@@ -11,9 +11,10 @@ package checkers;
  * @author Devan
  */
 public class Game {
+
     PlayerList playerList = new PlayerList();
-    Player player1 = new Player();
-    Player player2 = new Player();
+    Player player1 = Checkers.getPlayer1();
+    Player player2 = Checkers.getPlayer2();
     Board board = new Board();
     GameMenuView gameMenu = new GameMenuView(board);
     
@@ -24,11 +25,13 @@ public class Game {
         System.out.println("Player Two:");
         player2.getName();
         boolean input;
+        boolean player = true;
         do{
             System.out.println(player1.playerName + ", it is your turn");
-            input =gameMenu.getInput(player1);
+            input =gameMenu.getInput(player);
             if(input){
-                input = gameMenu.getInput(player2);
+                player = false;
+                input = gameMenu.getInput(player);
                     System.out.println(player2.playerName + ", it is your turn");
             }
         }

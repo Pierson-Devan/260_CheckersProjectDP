@@ -13,7 +13,6 @@ import java.util.Scanner;
  * @author Devan
  */
 public class GameMenuView {
-    private Player player;
     private Board board;
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     private GameMenuControl gameControl;
@@ -32,8 +31,8 @@ public class GameMenuView {
         {"Q", "QUIT"}
     };
     
-    public boolean getInput(Player player){
-        this.player = player;
+    public boolean getInput(boolean playerType){
+        
         String input;
         Scanner scan = new Scanner(System.in);
         boolean testInput = true;
@@ -46,13 +45,13 @@ public class GameMenuView {
             input = input.trim().toUpperCase();
             switch (input) {
                 case "T":
-                    this.gameControl.takeTurn(player);
+                    this.gameControl.takeTurn(playerType);
                     break;
                 case "N":
                     gameControl.startGame();
                     break;
                 case "R":
-                    gameControl.displayStats(player);
+                    gameControl.displayStats(playerType);
                     break;
                 case "H":
                     gameControl.displayHelpMenu();

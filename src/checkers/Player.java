@@ -107,6 +107,26 @@ public void getName(){
         String stats ="getPlayerStats() has been called";
         return stats;
  }
+    public class Piece {
+    String color;
+    int pieceName;
+    boolean isKing = false;//marks whether a given piece is normal or a king
+    int locationVert = 0;//see comment above class header
+    int locationHori = 0;//see comment above class header
+    boolean isCaptured = false;//stores if the piece is captured or not
+    
+    public Piece(){
+    
+    }
+    
+    /**outputs the values in all default variables*/
+    public void outputPieceInfo(){
+        System.out.println("Piece is King: " + isKing +"\n"
+                + "Piece is on location: " + locationHori +" and " +locationVert + "\n"
+                + "Piece is Captured: " +isCaptured);
+    }
+    }
+
 }
 
     

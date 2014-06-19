@@ -6,15 +6,17 @@
 
 package checkers;
 
+import java.io.Serializable;
 
-public class PlayerList {
+
+public class PlayerList implements Serializable{
     
     public PlayerList(){
     
     }
     
-    public String[] listOfPlayers = new String[50];
-    int endMarker = 0; //keeps track of which slot in the array next value goes in
+    private String[] listOfPlayers = new String[50];
+    private int endMarker = 0; //keeps track of which slot in the array next value goes in
     
     public void getPlayerArray(String name){
         listOfPlayers[endMarker] = name;
@@ -22,7 +24,7 @@ public class PlayerList {
         this.sortPlayerList();
     }
     
-    public void sortPlayerList(){
+    private void sortPlayerList(){
         String temp;
         for (int counter = 0; counter < listOfPlayers.length - 1; counter++){
             for (int incrementor = counter + 1; incrementor < listOfPlayers.length; incrementor ++){

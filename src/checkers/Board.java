@@ -7,7 +7,6 @@
 package checkers;
 
 import static java.lang.Integer.parseInt;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -15,12 +14,7 @@ import java.util.Scanner;
  * @author Tails2
  */
 public class Board {
-int locHoriz=1;
-int locVert=2;
-
-public Board(){
-
-}
+private int boardLocations[][];
 
 public void displayBoard(){
     System.out.println("Consider the board printed out\n");
@@ -35,6 +29,7 @@ public void displayBoard(){
     System.out.println("2\t|__ | __ | __ | __ | __ | __ | __ | __|");
     System.out.println("1\t|__ | __ | __ | __ | __ | __ | __ | __|");
 }
+/*
 //return true if vertical is even
     boolean bVertIsEven(int iVEven){
     if(locVert <=0 | locVert >= 9) System.out.println("Invalid Value/n");
@@ -53,23 +48,15 @@ public void displayBoard(){
     else return false;
     }
     
-    void makeBoardHorizLocations(){
-        ArrayList[] boardHorizLocations = new ArrayList[8];
-        int filler = 1;
+    void makeBoard(){
+        boardLocations = new int[8][8];
         for(int count = 0; count < 8; count ++){
-            boardHorizLocations[count].add(filler);
-            filler ++;
+            for (int counter = 0; counter < boardLocations.length-1; counter++)
+            boardLocations[count][counter]= counter;
         }
     }
-    void makeBoardVertLocations(){
-        ArrayList[] boardVertLocations = new ArrayList[8];
-        int filler = 1;
-        for(int count = 0; count < 8; count ++){
-            boardVertLocations[count].add(filler);
-            filler ++;
-        }
-    }
-/*    
+    
+   
     void unavailableBoardLocations(){
         boolean[] boardLocations = new boolean[64];
         for(int row=0; row<8; row=row+2){
@@ -78,10 +65,11 @@ public void displayBoard(){
             }
         }
     }
-    */
+    
     
     //New unavailableBoardLocations with for each
-    void unavailableBoardLocations(){    
+*/  
+void unavailableBoardLocations(){    
     boolean[][] availableBoardLocations = new boolean[8][8];
         
         for (int r=0; r<8; r++){
@@ -103,8 +91,9 @@ public void displayBoard(){
             System.out.println(q);
         }
     }
-     public void getValidInput(Player player){
+     public void getValidInput(boolean playerType){
         String input;
+        Player player = Checkers.getPlayer(playerType);
         int pieceId = 0;
         int horizLoc = 0;
         int vertLoc = 0;

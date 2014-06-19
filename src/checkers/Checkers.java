@@ -13,6 +13,25 @@ import java.util.Scanner;
  * @author Devan and Jennie
  */
 public class Checkers {
+    private static Player player1 = new Player();
+    private static Player player2 = new Player();
+    
+    
+    public static Player getPlayer1(){
+        return Checkers.player1;
+    }
+    
+    public static Player getPlayer2(){
+        return Checkers.player2;
+    }
+    
+    public static Player getPlayer(boolean playerType){
+        if(playerType)
+            return player1;
+        else
+            return player2;
+    }
+    
     /*
     String playerOneName;
     String playerTwoName;
@@ -39,6 +58,7 @@ public class Checkers {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         Checkers myGame = new Checkers();
         myGame.display();
