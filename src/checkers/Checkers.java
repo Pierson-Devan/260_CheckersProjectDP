@@ -45,10 +45,10 @@ public class Checkers {
             + "which may move diagonally in either the forward or backwards"
             + " direction.\nLet's play!";*/
     //instructions moved to HelpMenuView
-    public void display(){
+    private void display(){
         System.out.println("Welcome to Checkers!");
     }
-    public void endGame(){
+    private void endGame(){
         System.out.println("The game is over");
     }
     /**public void displayHelp(){
