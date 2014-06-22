@@ -38,7 +38,7 @@ public class GameMenuView implements Serializable {
         Scanner scan = new Scanner(System.in);
         boolean testInput = true;
         do {    
-            board.displayBoard();
+            board.printBoard();
             this.display(); // display the menu
 
             // get commaned entered

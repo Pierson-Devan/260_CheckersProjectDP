@@ -16,20 +16,19 @@ import java.util.Scanner;
  * @author Tails2
  */
 public class Board implements Serializable {
-private int boardLocations[][];
+private static char usedBoardLocations[][];
+private final BoardView board = new BoardView();
 
-public void displayBoard(){
-    System.out.println("Consider the board printed out\n");
-    System.out.println(" \t  1    2    3    4    5    6    7    8");
-    System.out.println(" \t __   __   __   __   __   __   __   __");
-    System.out.println("8\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("7\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("6\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("5\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("4\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("3\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("2\t|__ | __ | __ | __ | __ | __ | __ | __|");
-    System.out.println("1\t|__ | __ | __ | __ | __ | __ | __ | __|");
+private void findUsedLocations(){
+            /*Code to follow: check player's pieces for their location
+            if no piece, places a 'N', if a player 1 piece, places an 'X', and a
+            'O' if a player two piece
+            */
+}
+    
+public void printBoard(){
+    findUsedLocations();
+    board.displayBoard(usedBoardLocations);
 }
 /*
 //return true if vertical is even
