@@ -8,7 +8,6 @@ package checkers;
 
 import java.io.Serializable;
 import static java.lang.Integer.parseInt;
-import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
 /**

@@ -28,10 +28,10 @@ public class Game implements Serializable {
         boolean player = true;
         do{
             System.out.println(player1.playerName + ", it is your turn");
-            input =gameMenu.getInput(player);
+            input =gameMenu.executeCommand(player);
             if(input){
                 player = false;
-                input = gameMenu.getInput(player);
+                input = gameMenu.executeCommand(player);
                     System.out.println(player2.playerName + ", it is your turn");
             }
         }

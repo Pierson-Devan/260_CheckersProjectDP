@@ -63,7 +63,7 @@ public class Checkers implements Serializable {
         Checkers myGame = new Checkers();
         myGame.display();
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();
+        mainMenu.executeCommand();
         /*
         Piece myPiece = new Piece();
         HelpMenuView myHelp = new HelpMenuView();

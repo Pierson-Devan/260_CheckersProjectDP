@@ -6,49 +6,35 @@
 
 package checkers;
 
-import java.util.Scanner;
-import java.io.Serializable;
+
 /**
  *
  * @author Devan and Jennie
  */
-public class MainMenuView implements Serializable {
+public class MainMenuView extends Menu {
     boolean helpMenu = false;
     boolean quit = false;
     int userChoice;
     MainMenuControl mainControl = new MainMenuControl();
-    
-    public MainMenuView(){
-    
-    }
-    private static final String[][] mainItems = {
+    private static final String[][] menuItems = {
         {"N", "Start New Game"},
         {"H", "Help"},
         {"X", "Exit Checkers"}
-    }; 
+    };
     
-    public final void displayOptions() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tPlease choose a command from the options below:");
-
-        for (int i = 0; i < MainMenuView.mainItems.length; i++) {
-            System.out.println("\t   " + mainItems[i][0] + "\t" + mainItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
+    public MainMenuView(){
+        super(MainMenuView.menuItems);
     }
-
-    public void getInput(){
+     
+    @Override
+    public void executeCommand(){
         String choice;
-        Scanner input = new Scanner(System.in);
-        
-        do {
-            this.displayOptions();
-            choice = input.nextLine();
-            choice = choice.trim().toUpperCase();
-            
+        do {                     
+            choice = this.getInput();
             switch (choice) {
                 case "N":
                     this.mainControl.newGame();
+                    System.out.println("hello");
                     break;
                 case "H":
                     this.mainControl.displayHelpMenu();            
@@ -62,5 +48,10 @@ public class MainMenuView implements Serializable {
         } while (!choice.equals("X"));
 
         return;
+    }
+    
+    @Override
+    public boolean executeCommand(boolean stuff) {
+        return true;
     }
 }

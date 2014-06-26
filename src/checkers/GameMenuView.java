@@ -6,21 +6,21 @@
 
 package checkers;
 
-import java.util.Scanner;
-import java.io.Serializable;
 
 /**
  *
  * @author Devan
  */
-public class GameMenuView implements Serializable {
-    private Board board;
-    private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
-    private GameMenuControl gameControl;
+public class GameMenuView extends Menu{
+    private final Board board;
+    private final OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
+    private final GameMenuControl gameControl;
     
     public GameMenuView(Board board) {
+        super(GameMenuView.menuItems);
         this.board = board;
         this.gameControl = new GameMenuControl(board);
+        
         
     }
     private final static String[][] menuItems = {
@@ -32,18 +32,13 @@ public class GameMenuView implements Serializable {
         {"Q", "QUIT"}
     };
     
-    public boolean getInput(boolean playerType){
-        
+    @Override
+    public boolean executeCommand(boolean playerType){
+        boolean checker = true;
         String input;
-        Scanner scan = new Scanner(System.in);
-        boolean testInput = true;
-        do {    
-            board.printBoard();
-            this.display(); // display the menu
-
-            // get commaned entered
-            input = scan.nextLine();
-            input = input.trim().toUpperCase();
+        do{
+        board.printBoard();
+        input = this.getInput();
             switch (input) {
                 case "T":
                     this.gameControl.takeTurn(playerType);
@@ -61,23 +56,19 @@ public class GameMenuView implements Serializable {
                     gameControl.displayOptionsMenu();
                     break;
                 case "Q": 
-                    testInput = false;
+                    checker = false;
                     break;
                 default: 
-                    System.out.println("Invalid command. Please enter a valid command.\n");
-                    continue; 
+                    System.out.println("Invalid command. Please enter a valid command.\n"); 
             }
-        } while (!input.equals("Q") || !input.equals("T"));
-        return testInput;
+        }while (!input.equals("Q") || !input.equals("T"));
+        return checker;
+    }
+
+    @Override
+    public void executeCommand() {
+        return;
     }
     
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < this.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+    
 }

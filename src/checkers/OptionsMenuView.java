@@ -6,13 +6,11 @@
 
 package checkers;
 
-import java.util.Scanner;
-import java.io.Serializable;
 /**
  *
  * @author Jennie
  */
-public class OptionsMenuView implements Serializable {
+public class OptionsMenuView extends Menu {
     private final static String[][] menuItems = {
         {"S", "Turn Sound On"}, 
         {"T", "Timed Game"},
@@ -24,25 +22,21 @@ public class OptionsMenuView implements Serializable {
     
     
     // Create instance of the HelpMenuControl (action) class
-    private final OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
+    private final OptionsMenuControl optionsMenuControl;
     
     // default constructor
     public OptionsMenuView() {
+        super(OptionsMenuView.menuItems);
+        optionsMenuControl = new OptionsMenuControl();
     } 
         // display the options menu and get the end users input selection
     
-    public void getInput() {       
+    @Override
+    public void executeCommand() {       
               
         String command;
-        Scanner inFile = new Scanner(System.in);
-        
         do {
-            
-            this.display(); // display the menu
-            
-            // get command entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+            command = this.getInput();
             
             switch (command) {
                 case "S":
@@ -65,15 +59,10 @@ public class OptionsMenuView implements Serializable {
         } while (!command.equals("Q"));  
     }
     
-           // displays the options menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (String[] menuItem : OptionsMenuView.menuItems) {
-            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
-        }
-        System.out.println("\t===============================================================\n");
+    
+    @Override
+    public boolean executeCommand(boolean stuff) {
+        return true;
     }
 }
     

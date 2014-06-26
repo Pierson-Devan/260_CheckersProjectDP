@@ -19,7 +19,11 @@ public class BoardView implements Serializable{
     public void displayBoard(char board[][]){
     System.out.println(" \t  1    2    3    4    5    6    7    8");
     System.out.println(" \t __   __   __   __   __   __   __   __");
+    /*
+    *Board under Construction
     for(int x = board.length-1; x <0; x--){
+    */
+        System.out.println("under construction");
         /*
         Code to follow: search array, if char is n, output ' _ |'
         *else, if player 1 piece, output ' X |'
@@ -36,6 +40,4 @@ public class BoardView implements Serializable{
     System.out.println("2\t|__ | __ | __ | __ | __ | __ | __ | __|");
     System.out.println("1\t|__ | __ | __ | __ | __ | __ | __ | __|");
     */
-}
-    
 }
