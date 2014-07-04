@@ -5,6 +5,8 @@
  */
 
 package checkers;
+import CIT260_05_JDCheckers_Menus_View.HelpMenuView;
+import CIT260_05_JDCheckers_Menus_View.Menu;
 import java.io.Serializable;
 /**
  *

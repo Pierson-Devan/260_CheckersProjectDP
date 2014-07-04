@@ -6,6 +6,7 @@
 
 package checkers;
 
+import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import java.util.Scanner;
 import java.io.Serializable;
 /**

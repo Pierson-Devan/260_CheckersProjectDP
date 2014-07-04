@@ -5,6 +5,7 @@
  */
 
 package checkers;
+import CIT260_05_JDCheckers_Menus_View.GameMenuView;
 import java.io.Serializable;
 /**
  *

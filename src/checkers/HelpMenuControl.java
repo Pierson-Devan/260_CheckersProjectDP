@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class HelpMenuControl implements Serializable {
 
 
-    HelpMenuControl() {
+    public HelpMenuControl() {
     }
 
 

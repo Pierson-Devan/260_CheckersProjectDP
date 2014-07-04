@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 
-package checkers;
+package CIT260_05_JDCheckers_Menus_View;
 
+import CIT260_05_JDCheckers_interfaces.DisplayInfo;
+import CIT260_05_JDCheckers_interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Devan
  */
-public abstract class Menu implements Serializable{
+public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
     String[][] menuItems = null;
     
     public Menu(){
@@ -37,7 +39,7 @@ public abstract class Menu implements Serializable{
     }
     
     
-    protected final String getInput(){
+    public final String getInput(){
         String input;
         Scanner scan = new Scanner(System.in);
             this.display(); // display the menu

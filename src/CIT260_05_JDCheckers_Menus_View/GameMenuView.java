@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 
-package checkers;
+package CIT260_05_JDCheckers_Menus_View;
+
+import checkers.Board;
+import checkers.GameMenuControl;
+import checkers.OptionsMenuControl;
 
 
 /**
