@@ -42,6 +42,7 @@ public class HelpMenuView extends Menu {
             command = this.getInput();
             switch (command) {
                 case "B":
+                    System.out.println("Check");
                     helpControl.displayBoardHelp();
                     break;
                 case "G":
@@ -57,12 +58,11 @@ public class HelpMenuView extends Menu {
                     this.helpControl.displayPlayerHelp();
                     break; 
                 case "Q": 
-                    break;
+                    return;
                 default: 
                     System.out.println("Invalid option. Please enter a valid option.");
                 }
-            }while (!command.equals("Q"));  
-         return;
+            }while (!command.equals("Q"));
     }
 
     @Override

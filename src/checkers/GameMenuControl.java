@@ -26,7 +26,7 @@ public class GameMenuControl implements Serializable, DisplayHelp {
     }
     
     public void takeTurn(boolean playerType) {
-        board.getValidInput(playerType);
+        board.getValidLocation(playerType);
     }
    
       
@@ -44,7 +44,8 @@ public class GameMenuControl implements Serializable, DisplayHelp {
     
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
+        helpMenu.executeCommand();
+        
     }
     
     public void displayOptionsMenu() {

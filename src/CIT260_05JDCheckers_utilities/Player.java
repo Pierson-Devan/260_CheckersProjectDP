@@ -27,10 +27,15 @@ public class Player {
     
     
     public Player(){
+        
+    }
+    
+    public void createPieceArray(){
         for (int x = 0; x <piece.length; x++){
             piece[x]= new Piece();
             piece[x].pieceName= x;
         }
+            createPieceLocs();
     }
     
 public void getName(){
@@ -107,6 +112,30 @@ public void getName(){
         String stats ="getPlayerStats() has been called";
         return stats;
  }
+    
+    private void createPieceLocs(){
+        int marker = 0;
+        int counter = 1;
+        int post = 1;
+        if(isPlayerOne){
+            while (marker < 12){
+                for (int x = 1; x <= 4; x ++){
+                    if(post > 8){
+                        post -= 8;
+                    }
+                    piece[marker].locationVert = counter;
+                    piece[marker].locationHori = post;
+                    marker ++;
+                    post += 2;
+                }
+                counter ++;
+            }
+        }
+        else{
+            System.out.println("Under Construction");
+        }
+    }
+    
     public class Piece {
     String color;
     int pieceName;

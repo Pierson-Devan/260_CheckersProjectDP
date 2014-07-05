@@ -5,8 +5,8 @@
  */
 
 package CIT260_05JDCheckers_utilities;
-
 import java.io.Serializable;
+import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
@@ -91,42 +91,29 @@ void unavailableBoardLocations(){
             System.out.println(q);
         }
     }
-     public void getValidInput(boolean playerType){
-        String input;
+     public void getValidLocation(boolean playerType){
         Player player = Checkers.getPlayer(playerType);
-        int pieceId = 0;
-        int horizLoc = 0;
-        int vertLoc = 0;
-        int pieceCurrentHorizLoc = player.piece[pieceId].locationHori;
-        int pieceCurrentVertLoc = player.piece[pieceId].locationVert;
+        int pieceId=0;
+        int horizLoc=0;
+        int vertLoc=0;
+        int pieceCurrentVertLoc = 0;
+        int pieceCurrentHorizLoc = 0;
         boolean valid = false;
         while (!valid){
-            Scanner inFile = new Scanner(System.in);
-            System.out.println("Please enter the id number of the piece you wish to move: ");
-            input = inFile.nextLine();
-            pieceId = parseInt(input);
+            pieceId = getPieceIDInput();
+            pieceCurrentHorizLoc = player.piece[pieceId].locationHori;
+            pieceCurrentVertLoc = player.piece[pieceId].locationVert;
             System.out.println(player.piece[pieceId].locationHori);
             System.out.println(player.piece[pieceId].locationVert);
-            System.out.println("Please enter the horizontal location you wish to move to: ");
-            input = inFile.nextLine();
-            horizLoc = parseInt(input);
-            System.out.println("Please enter the vertical location you wish to move to: ");
-            input = inFile.nextLine();
-            //this line will read a future array of all the player's pieces to
-            //find the one with the name that matches the input on line 59
-            vertLoc = parseInt(input);
-            System.out.println(horizLoc + " " + vertLoc);
-            if (pieceCurrentHorizLoc == 0 || pieceCurrentVertLoc == 0){
-                System.out.println("Invalid piece. Please try again");
-                continue;
-            }
+            horizLoc = getPieceHorizInput();
+            vertLoc = getPieceVertInput();
+            System.out.println(horizLoc + " " + vertLoc);       
             if (horizLoc <9 && horizLoc > 0){
                 if(vertLoc < 9 && horizLoc > 0){
                     if(player.isPlayerOne == true){
                         if(pieceCurrentHorizLoc + 1 == horizLoc  || pieceCurrentHorizLoc -1 == horizLoc){
                             if(pieceCurrentVertLoc + 1 == vertLoc){
                                 valid = true;
-                                break;
                             }
                         }    
                     }
@@ -134,17 +121,46 @@ void unavailableBoardLocations(){
                         if(pieceCurrentHorizLoc + 1 == horizLoc  || pieceCurrentHorizLoc -1 == horizLoc){
                             if(pieceCurrentVertLoc - 1 == vertLoc){
                                 valid = true;
-                                break;
                             }
                         }
                     }
                 }
             }
+            else
             System.out.println("Invalid move. Please try again");
         }    
-        System.out.println("Valid move. Piece number" +pieceId+ " will move from "
-                +pieceCurrentHorizLoc+ ", " +pieceCurrentVertLoc+ "to " +horizLoc
+        System.out.println("Valid move. Piece number " +pieceId+ " will move from "
+                +pieceCurrentHorizLoc+ ", " +pieceCurrentVertLoc+ " to " +horizLoc
                 +", " +vertLoc);
+    }
+     
+    
+
+    private int getPieceIDInput() {
+        System.out.println("Please enter the id number of the piece you wish to move: ");
+        String input;
+        Scanner inFile = new Scanner(System.in);
+        input = inFile.nextLine();
+        int id = parseInt(input);
+        return id;
+    }
+
+    private int getPieceHorizInput() {
+        String input;
+        Scanner inFile = new Scanner(System.in);
+        System.out.println("Please enter the horizontal location you wish to move to: ");
+        input = inFile.nextLine();
+        int hLoc = parseInt(input);
+        return hLoc;
+    }
+
+    private int getPieceVertInput() {
+        String input;
+        Scanner inFile = new Scanner(System.in);
+        System.out.println("Please enter the vertical location you wish to move to: ");
+            input = inFile.nextLine();
+            int vLoc = parseInt(input);
+            return vLoc;
     }
 }
     

@@ -18,7 +18,7 @@ public class MainMenuControl implements Serializable, DisplayHelp {
     
     public void displayHelpMenu(){
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
+        helpMenu.executeCommand();
     }
     
     public void newGame(){
