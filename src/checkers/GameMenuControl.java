@@ -5,16 +5,20 @@
  */
 
 package checkers;
+import CIT260_05JDCheckers_utilities.Board;
+import CIT260_05JDCheckers_utilities.Checkers;
+import CIT260_05JDCheckers_utilities.Player;
 import CIT260_05_JDCheckers_Menus_View.HelpMenuView;
-import CIT260_05_JDCheckers_Menus_View.OptionsMenuView;
 import CIT260_05_JDCheckers_Menus_View.Menu;
+import CIT260_05_JDCheckers_Menus_View.OptionsMenuView;
+import CIT260_05_JDCheckers_interfaces.DisplayHelp;
 import java.io.Serializable;
 
 /**
  *
  * @author Devan
  */
-public class GameMenuControl implements Serializable {
+public class GameMenuControl implements Serializable, DisplayHelp {
         private Board board;
     
     public GameMenuControl(Board board){

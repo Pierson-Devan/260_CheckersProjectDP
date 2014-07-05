@@ -6,7 +6,7 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
-import checkers.Board;
+import CIT260_05JDCheckers_utilities.Board;
 import checkers.GameMenuControl;
 import checkers.OptionsMenuControl;
 

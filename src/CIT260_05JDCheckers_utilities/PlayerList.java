@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package checkers;
+package CIT260_05JDCheckers_utilities;
 
 import java.io.Serializable;
 
