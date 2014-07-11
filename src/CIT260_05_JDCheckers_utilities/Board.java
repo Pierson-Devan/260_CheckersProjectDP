@@ -5,7 +5,9 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
+import CIT260_05_JDCheckers_exceptions.BoardException;
 import java.io.Serializable;
+import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
@@ -90,7 +92,7 @@ void unavailableBoardLocations(){
             System.out.println(q);
         }
     }
-     public void getValidLocation(boolean playerType){
+     public void getValidLocation(boolean playerType) throws BoardException{
         Player player = Checkers.getPlayer(playerType);
         int pieceId=0;
         int horizLoc=0;
@@ -135,12 +137,18 @@ void unavailableBoardLocations(){
      
     
 
-    private int getPieceIDInput() {
+    private int getPieceIDInput() throws BoardException {
         System.out.println("Please enter the id number of the piece you wish to move: ");
         String input;
+        int id = -1;
         Scanner inFile = new Scanner(System.in);
+        try{
         input = inFile.nextLine();
-        int id = parseInt(input);
+        id = parseInt(input);
+        }
+        catch(NumberFormatException ex){
+            throw new BoardException("Invalid number entered.");
+        }
         return id;
     }
 

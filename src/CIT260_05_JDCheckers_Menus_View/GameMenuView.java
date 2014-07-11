@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
+import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_utilities.Board;
 import checkers.GameMenuControl;
 import checkers.OptionsMenuControl;
@@ -39,8 +40,9 @@ public class GameMenuView extends Menu{
     @Override
     public boolean executeCommand(boolean playerType){
         boolean checker = true;
-        String input;
+        String input = null;
         do{
+        try{
         board.printBoard();
         input = this.getInput();
             switch (input) {
@@ -65,6 +67,10 @@ public class GameMenuView extends Menu{
                 default: 
                     System.out.println("Invalid command. Please enter a valid command.\n"); 
             }
+        }
+        catch(MenuException mex){
+            System.out.println("\n" + mex.getMessage());
+        }
         }while (!input.equals("Q") || !input.equals("T"));
         return checker;
     }

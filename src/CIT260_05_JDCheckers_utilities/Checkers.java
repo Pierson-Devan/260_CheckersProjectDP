@@ -7,8 +7,9 @@
 package CIT260_05_JDCheckers_utilities;
 
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
-import java.util.Scanner;
+import CIT260_05_JDCheckers_exceptions.GameException;
 import java.io.Serializable;
+import java.util.Scanner;
 /**
  *
  * @author Devan and Jennie
@@ -60,11 +61,19 @@ public class Checkers implements Serializable {
      * @param args the command line arguments
      */
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws GameException {
+        try{
         Checkers myGame = new Checkers();
         myGame.display();
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.executeCommand();
+        }
+        catch(UnsupportedOperationException oex){
+            throw new GameException("Fatal Error has occured.");
+        }
+        finally{
+            System.out.println("Shutting down system. Please retart and try again.");
+        }
         /*
         Piece myPiece = new Piece();
         HelpMenuView myHelp = new HelpMenuView();

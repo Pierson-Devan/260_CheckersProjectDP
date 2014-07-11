@@ -49,6 +49,7 @@ public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
             // get commaned entered
             input = scan.nextLine();
             input = input.trim().toUpperCase();
+            System.out.println(input);
             if(!isValidInput(input)){
                 throw new MenuException("This is not a valid option");
             }
@@ -62,8 +63,10 @@ public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
     private boolean isValidInput(String input){
         boolean test = false;
         for(int x = 0; x < menuItems.length; x++){
-            if(menuItems[x].equals(input))
+            if(input.equals(menuItems[x][0])){
                 test = true;
+                break;
+            }
         }
         return test;
     }

@@ -37,7 +37,7 @@ public class OptionsMenuView extends Menu {
     @Override
     public void executeCommand() {       
               
-        String command;
+        String command = null;
         do {
         try{
             command = this.getInput();

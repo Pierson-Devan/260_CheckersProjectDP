@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
+import CIT260_05_JDCheckers_exceptions.MenuException;
 import checkers.HelpMenuControl;
 
 /**
@@ -37,8 +38,9 @@ public class HelpMenuView extends Menu {
     
     @Override
     public void executeCommand() {
-            String command;
+            String command = null;
             do{
+            try{
             command = this.getInput();
             switch (command) {
                 case "B":
@@ -62,6 +64,10 @@ public class HelpMenuView extends Menu {
                 default: 
                     System.out.println("Invalid option. Please enter a valid option.");
                 }
+            }
+            catch(MenuException mex){
+                System.out.println("\n" + mex.getMessage());
+            }
             }while (!command.equals("Q"));
     }
 
