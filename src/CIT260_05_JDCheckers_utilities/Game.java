@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package CIT260_05JDCheckers_utilities;
+package CIT260_05_JDCheckers_utilities;
 import CIT260_05_JDCheckers_Menus_View.GameMenuView;
 import java.io.Serializable;
 /**

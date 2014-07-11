@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package CIT260_05JDCheckers_utilities;
+package CIT260_05_JDCheckers_utilities;
 import java.io.Serializable;
-import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 

@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
+import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_interfaces.DisplayInfo;
 import CIT260_05_JDCheckers_interfaces.EnterInfo;
 import java.io.Serializable;
@@ -28,6 +29,7 @@ public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
     }
     
     
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -39,17 +41,30 @@ public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
     }
     
     
-    public final String getInput(){
-        String input;
+    @Override
+    public final String getInput() throws MenuException{
+        String input = null;
         Scanner scan = new Scanner(System.in);
             this.display(); // display the menu
             // get commaned entered
             input = scan.nextLine();
             input = input.trim().toUpperCase();
+            if(!isValidInput(input)){
+                throw new MenuException("This is not a valid option");
+            }
         return input;
     }
     
     public abstract void executeCommand();
     
     public abstract boolean executeCommand(boolean stuff);
+
+    private boolean isValidInput(String input){
+        boolean test = false;
+        for(int x = 0; x < menuItems.length; x++){
+            if(menuItems[x].equals(input))
+                test = true;
+        }
+        return test;
+    }
 }

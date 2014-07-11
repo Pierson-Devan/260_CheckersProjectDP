@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
+import CIT260_05_JDCheckers_exceptions.MenuException;
 import checkers.OptionsMenuControl;
 
 /**
@@ -38,6 +39,7 @@ public class OptionsMenuView extends Menu {
               
         String command;
         do {
+        try{
             command = this.getInput();
             
             switch (command) {
@@ -58,6 +60,10 @@ public class OptionsMenuView extends Menu {
                 default: 
                     System.out.println("Invalid option. Please enter a valid option.");
             }
+        }
+        catch(MenuException mex){
+            System.out.println("\n" + mex.getMessage());
+        }
         } while (!command.equals("Q"));  
     }
     

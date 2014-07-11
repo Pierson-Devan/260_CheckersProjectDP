@@ -6,11 +6,13 @@
 
 package CIT260_05_JDCheckers_interfaces;
 
+import CIT260_05_JDCheckers_exceptions.MenuException;
+
 /**
  *
  * @author Devan
  */
 public interface EnterInfo {
-    String getInput();
+    String getInput() throws MenuException;
     
 }

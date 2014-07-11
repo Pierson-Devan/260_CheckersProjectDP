@@ -5,7 +5,7 @@
  */
 
 package checkers;
-import CIT260_05JDCheckers_utilities.Game;
+import CIT260_05_JDCheckers_utilities.Game;
 import CIT260_05_JDCheckers_Menus_View.HelpMenuView;
 import CIT260_05_JDCheckers_Menus_View.Menu;
 import CIT260_05_JDCheckers_interfaces.DisplayHelp;
@@ -16,6 +16,7 @@ import java.io.Serializable;
  */
 public class MainMenuControl implements Serializable, DisplayHelp {
     
+    @Override
     public void displayHelpMenu(){
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.executeCommand();

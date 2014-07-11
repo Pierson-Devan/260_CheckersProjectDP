@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package CIT260_05JDCheckers_utilities;
+package CIT260_05_JDCheckers_utilities;
 
 import java.io.Serializable;
 
@@ -15,10 +15,10 @@ public class PlayerList implements Serializable{
     
     }
     
-    private String[] listOfPlayers = new String[50];
+    private final String[] listOfPlayers = new String[50];
     private int endMarker = 0; //keeps track of which slot in the array next value goes in
     
-    public void getPlayerArray(String name){
+    public void setPlayerList(String name){
         listOfPlayers[endMarker] = name;
         endMarker ++;
         this.sortPlayerList();
@@ -37,7 +37,7 @@ public class PlayerList implements Serializable{
         }
     }
     
-    public void outputPlayerList(){
+    public void gettPlayerList(){
         for (int count = 0; count < listOfPlayers.length; count ++){
             System.out.println("The players in the system are: \n");
             System.out.println(listOfPlayers[count] + " \n");
