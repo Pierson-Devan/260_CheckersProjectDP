@@ -5,9 +5,9 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
+import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_exceptions.BoardException;
 import java.io.Serializable;
-import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 

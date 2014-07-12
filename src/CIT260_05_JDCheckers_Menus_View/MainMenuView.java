@@ -7,7 +7,7 @@
 package CIT260_05_JDCheckers_Menus_View;
 
 import CIT260_05_JDCheckers_exceptions.MenuException;
-import checkers.MainMenuControl;
+import CIT260_05_JDCheckers_Menu_Control.MainMenuControl;
 
 
 /**

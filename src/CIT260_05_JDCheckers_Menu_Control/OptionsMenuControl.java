@@ -1,12 +1,13 @@
 
-package checkers;
+package CIT260_05_JDCheckers_Menu_Control;
+import CIT260_05_JDCheckers_interfaces.ReturntoMainMenu;
 import java.io.Serializable;
 /**
  *
  * @author Jennie
  */
 
-public class OptionsMenuControl implements Serializable {
+public class OptionsMenuControl implements Serializable, ReturntoMainMenu {
     boolean bSound = false;
     boolean bTimed = false;
 
@@ -52,6 +53,8 @@ public class OptionsMenuControl implements Serializable {
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }  
-  
+    public void mainMenu(){
+        //myGame.display();
+    }
 }
 

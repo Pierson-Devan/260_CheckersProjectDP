@@ -4,15 +4,17 @@
  * and open the template in the editor.
  */
 
-package checkers;
+package CIT260_05_JDCheckers_Menu_Control;
+import CIT260_05_JDCheckers_interfaces.ReturntoMainMenu;
 import java.io.Serializable;
+
 
 /**
  *
  * @authors Devan and Jennie
  */
 
-public class HelpMenuControl implements Serializable {
+public class HelpMenuControl implements Serializable, ReturntoMainMenu {
 
 
     public HelpMenuControl() {
@@ -86,6 +88,12 @@ public class HelpMenuControl implements Serializable {
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+    
+    public void mainMenu(){
+        //myGame.display();
+    }
+   
+    
     
   
 }

@@ -5,6 +5,8 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
+import CIT260_05_JDCheckers_Player.PlayerList;
+import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_Menus_View.GameMenuView;
 import java.io.Serializable;
 /**

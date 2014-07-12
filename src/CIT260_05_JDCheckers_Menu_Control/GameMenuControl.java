@@ -4,23 +4,24 @@
  * and open the template in the editor.
  */
 
-package checkers;
-import CIT260_05_JDCheckers_utilities.Board;
-import CIT260_05_JDCheckers_utilities.Checkers;
-import CIT260_05_JDCheckers_utilities.Player;
+package CIT260_05_JDCheckers_Menu_Control;
 import CIT260_05_JDCheckers_Menus_View.HelpMenuView;
 import CIT260_05_JDCheckers_Menus_View.Menu;
 import CIT260_05_JDCheckers_Menus_View.OptionsMenuView;
+import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_exceptions.BoardException;
 import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_interfaces.DisplayHelp;
+import CIT260_05_JDCheckers_interfaces.ReturntoMainMenu;
+import CIT260_05_JDCheckers_utilities.Board;
+import CIT260_05_JDCheckers_utilities.Checkers;
 import java.io.Serializable;
 
 /**
  *
  * @author Devan
  */
-public class GameMenuControl implements Serializable, DisplayHelp {
+public class GameMenuControl implements Serializable, DisplayHelp, ReturntoMainMenu {
         private Board board;
     
     public GameMenuControl(Board board){
@@ -52,6 +53,10 @@ public class GameMenuControl implements Serializable, DisplayHelp {
     public void displayOptionsMenu() throws MenuException {
         OptionsMenuView newoptions = new OptionsMenuView();
         newoptions.getInput();
-    }    
+    }  
+    
+    public void mainMenu(){
+        //myGame.display();
+    }
    
 }

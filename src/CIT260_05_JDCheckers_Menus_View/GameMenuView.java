@@ -8,8 +8,8 @@ package CIT260_05_JDCheckers_Menus_View;
 
 import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_utilities.Board;
-import checkers.GameMenuControl;
-import checkers.OptionsMenuControl;
+import CIT260_05_JDCheckers_Menu_Control.GameMenuControl;
+import CIT260_05_JDCheckers_Menu_Control.OptionsMenuControl;
 
 
 /**
@@ -47,7 +47,7 @@ public class GameMenuView extends Menu{
         input = this.getInput();
             switch (input) {
                 case "T":
-                    this.gameControl.takeTurn(playerType);
+                    //this.gameControl.takeTurn(playerType);
                     break;
                 case "N":
                     gameControl.startGame();
@@ -62,7 +62,9 @@ public class GameMenuView extends Menu{
                     gameControl.displayOptionsMenu();
                     break;
                 case "Q": 
+                    
                     checker = false;
+                    this.gameControl.mainMenu();
                     break;
                 default: 
                     System.out.println("Invalid command. Please enter a valid command.\n"); 

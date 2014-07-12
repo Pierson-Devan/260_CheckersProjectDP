@@ -7,7 +7,7 @@
 package CIT260_05_JDCheckers_Menus_View;
 
 import CIT260_05_JDCheckers_exceptions.MenuException;
-import checkers.OptionsMenuControl;
+import CIT260_05_JDCheckers_Menu_Control.OptionsMenuControl;
 
 /**
  *
@@ -56,6 +56,8 @@ public class OptionsMenuView extends Menu {
                     this.optionsMenuControl.displayWinning();
                     break;
                 case "Q": 
+                    //return;
+                    this.optionsMenuControl.mainMenu();
                     break;
                 default: 
                     System.out.println("Invalid option. Please enter a valid option.");

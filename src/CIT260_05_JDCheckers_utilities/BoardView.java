@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_utilities;
 
+import CIT260_05_JDCheckers_Player.Player;
 import java.io.Serializable;
 
 /**

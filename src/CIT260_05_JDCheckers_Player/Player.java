@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package CIT260_05_JDCheckers_utilities;
+package CIT260_05_JDCheckers_Player;
 
+import CIT260_05_JDCheckers_exceptions.PlayerException;
 import java.util.Scanner;
 
 /**
@@ -13,13 +14,13 @@ import java.util.Scanner;
  * @author Devan and Jennie
  */
 public class Player {
-    Stats stats = new Stats();
-    String playerName = null;
-    int numberOfPieces = 12;
-    int numberOfKings = 0;
-    int count = 0;
-    boolean isPlayerOne = false;
-    Piece[] piece = new Piece[12];
+    public Stats stats = new Stats();
+    public String playerName = null;
+    public int numberOfPieces = 12;
+    public int numberOfKings = 0;
+    public int count = 0;
+    public boolean isPlayerOne = false;
+    public Piece[] piece = new Piece[12];
     
     
     public Player(){
@@ -42,17 +43,34 @@ public void getName(){
     //myList.getPlayerArray(playerName);         
     }
     
-    public void outputPlayerInfo(){
+    public void outputPlayerInfo()throws PlayerException{
         if(playerName != null)
             System.out.println("Player Name: " + playerName);
         else{
-            System.out.println("Error: No user information given");
-            return;
+            throw new PlayerException("Error: No user information given");
+            /*System.out.println("Error: No user information given");
+            return;*/
         }
         System.out.println(playerName + "'s number of pieces: " + numberOfPieces + "\n");
         System.out.println(playerName + "'s number of pieces: " + numberOfKings + "\n");
         stats.displayStats();
-    }
+    } 
+
+// public void outputPlayerInfo(){
+//     try {
+//        if(playerName != null)
+//            System.out.println("Player Name: " + playerName);
+//     }
+//     catch (Exception e){
+//     System.out.println(e.getMessage());
+//     }
+//     
+//     
+//     System.out.println(playerName + "'s number of pieces: " + numberOfPieces + "\n");
+//     System.out.println(playerName + "'s number of pieces: " + numberOfKings + "\n");
+//        stats.displayStats();
+//    }
+
     
         /*Define the problem: The system needs to track the number of pieces still on the board, so it
     can determine when the player gets to 0 that the other player wins. Given inputs: piece 
@@ -76,7 +94,7 @@ public void getName(){
         *and 1 type casting*/
     public int lowerPieceCount(String location){
         if (location != null){
-            System.out.println("Invalid value. Try again.\n");
+            System.out.println("Invalid value for lowerPieceCount. Try again.\n"); //Exception Possibility
             return -99;
         }
         if (numberOfPieces <=1)
@@ -110,17 +128,17 @@ public void getName(){
             }
         }
         else{
-            System.out.println("Under Construction");
+            System.out.println("Under Construction in createPieceLocs");
         }
     }
     
     public class Piece {
-    String color;
-    int pieceName;
-    boolean isKing = false;//marks whether a given piece is normal or a king
-    int locationVert = 0;//see comment above class header
-    int locationHori = 0;//see comment above class header
-    boolean isCaptured = false;//stores if the piece is captured or not
+    public String color;
+    public int pieceName;
+    public boolean isKing = false;//marks whether a given piece is normal or a king
+    public int locationVert = 0;//see comment above class header
+    public int locationHori = 0;//see comment above class header
+    public boolean isCaptured = false;//stores if the piece is captured or not
     
     public Piece(){
     

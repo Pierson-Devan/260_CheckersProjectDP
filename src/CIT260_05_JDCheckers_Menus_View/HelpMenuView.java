@@ -7,7 +7,7 @@
 package CIT260_05_JDCheckers_Menus_View;
 
 import CIT260_05_JDCheckers_exceptions.MenuException;
-import checkers.HelpMenuControl;
+import CIT260_05_JDCheckers_Menu_Control.HelpMenuControl;
 
 /**
  *
@@ -60,7 +60,9 @@ public class HelpMenuView extends Menu {
                     this.helpControl.displayPlayerHelp();
                     break; 
                 case "Q": 
-                    return;
+                    //return;
+                    this.helpControl.mainMenu();
+                    break;
                 default: 
                     System.out.println("Invalid option. Please enter a valid option.");
                 }

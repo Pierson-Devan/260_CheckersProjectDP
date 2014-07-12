@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_utilities;
 
+import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import CIT260_05_JDCheckers_exceptions.GameException;
 import java.io.Serializable;
