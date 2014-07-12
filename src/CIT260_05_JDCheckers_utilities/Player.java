@@ -13,21 +13,17 @@ import java.util.Scanner;
  * @author Devan and Jennie
  */
 public class Player {
+    Stats stats = new Stats();
     String playerName = null;
     int numberOfPieces = 12;
     int numberOfKings = 0;
-    int numberOfCapturedPieces = 0;
-    int numberOfCapturedKings = 0;
     int count = 0;
-    double ratioLostToCaptured = 0;
-    int numberOfPiecesLost = 0;
-    int numberOfKingsLost = 0;
     boolean isPlayerOne = false;
     Piece[] piece = new Piece[12];
     
     
     public Player(){
-        
+    
     }
     
     public void createPieceArray(){
@@ -55,9 +51,7 @@ public void getName(){
         }
         System.out.println(playerName + "'s number of pieces: " + numberOfPieces + "\n");
         System.out.println(playerName + "'s number of pieces: " + numberOfKings + "\n");
-        System.out.println(playerName + "'s number of pieces: " + numberOfCapturedPieces + "\n");
-        System.out.println(playerName + "'s number of pieces: " + numberOfCapturedKings + "\n");
-        System.out.println(playerName + "'s number of pieces: " + ratioLostToCaptured + "\n");
+        stats.displayStats();
     }
     
         /*Define the problem: The system needs to track the number of pieces still on the board, so it
@@ -88,29 +82,13 @@ public void getName(){
         if (numberOfPieces <=1)
             return 0;
         numberOfPieces--;
-        numberOfPiecesLost ++;
-        if(numberOfCapturedPieces != 0){
-        ratioLostToCaptured = (int)(numberOfPiecesLost / numberOfCapturedPieces); 
-        }
-        else
-            System.out.println("An Error Has occured: Divsion By Zero.\n \tTo "
-                    + "resovlve this error, please capture some of your"
-                    + " opponent's pieces");
+        
+       
         return numberOfPieces;
     }
-    public int increaseNumberOfCapturedPieces(){
-        if(numberOfCapturedPieces >= 0 && numberOfCapturedPieces < 12){
-            numberOfCapturedPieces ++;
-            ratioLostToCaptured = (int)(numberOfPiecesLost / numberOfCapturedPieces);
-            return numberOfCapturedPieces;
-        }
-        System.out.println("An Error has occured.\n\tAn invalid value was found");
-        return -99;
-    }
     
-    public String getPlayerStats(){
-        String stats ="getPlayerStats() has been called";
-        return stats;
+    public void getPlayerStats(){
+        stats.getStats();
  }
     
     private void createPieceLocs(){

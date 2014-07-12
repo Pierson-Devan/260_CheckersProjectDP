@@ -152,21 +152,25 @@ void unavailableBoardLocations(){
         return id;
     }
 
-    private int getPieceHorizInput() {
+    private int getPieceHorizInput() throws BoardException {
         String input;
         Scanner inFile = new Scanner(System.in);
         System.out.println("Please enter the horizontal location you wish to move to: ");
         input = inFile.nextLine();
         int hLoc = parseInt(input);
+        if (!(hLoc >= 1) || (hLoc <= 8))
+            throw new BoardException("Error: Invalid Horizontial Location entered. Location must be between 1 and 8");
         return hLoc;
     }
 
-    private int getPieceVertInput() {
+    private int getPieceVertInput() throws BoardException {
         String input;
         Scanner inFile = new Scanner(System.in);
         System.out.println("Please enter the vertical location you wish to move to: ");
             input = inFile.nextLine();
             int vLoc = parseInt(input);
+            if(!(vLoc >=1)||(vLoc <= 8))
+                throw new BoardException("Error: Invalid Vertical Location entered. Location must be between 1 and 8");
             return vLoc;
     }
 }

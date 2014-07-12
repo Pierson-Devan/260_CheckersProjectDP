@@ -11,6 +11,7 @@ import CIT260_05_JDCheckers_utilities.Player;
 import CIT260_05_JDCheckers_Menus_View.HelpMenuView;
 import CIT260_05_JDCheckers_Menus_View.Menu;
 import CIT260_05_JDCheckers_Menus_View.OptionsMenuView;
+import CIT260_05_JDCheckers_exceptions.BoardException;
 import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_interfaces.DisplayHelp;
 import java.io.Serializable;
@@ -26,7 +27,7 @@ public class GameMenuControl implements Serializable, DisplayHelp {
         this. board = board;
     }
     
-    public void takeTurn(boolean playerType) {
+    public void takeTurn(boolean playerType) throws BoardException {
         board.getValidLocation(playerType);
     }
    
