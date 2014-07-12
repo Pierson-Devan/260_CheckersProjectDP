@@ -38,10 +38,8 @@ public class GameMenuControl implements Serializable, DisplayHelp {
     
     public void displayStats(boolean playerType) {
         Player player = Checkers.getPlayer(playerType);
-        String playerStats = player.getPlayerStats();
-        System.out.println("\n\t++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("\t " + playerStats);
-        System.out.println("\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        player.getPlayerStats();
+        
     }
     
     @Override
