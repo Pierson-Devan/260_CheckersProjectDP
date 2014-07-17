@@ -42,8 +42,15 @@ public void getNameInput(){
     PlayerList myList = new PlayerList();
     System.out.println("Please enter new player's name: ");
     playerName = input.nextLine();
+    checkName(playerName);
     //myList.getPlayerArray(playerName);         
     }
+
+public void checkName(String name){
+    if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
+        System.out.println("It's not wise to upset a Wookie. I suggest a new strategy: Let the Wookie win.");
+    }
+}
     
     public void outputPlayerInfo()throws PlayerException{
         if(playerName != null)
