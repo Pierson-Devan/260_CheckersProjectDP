@@ -8,6 +8,8 @@ package CIT260_05_JDCheckers_Menus_View;
 
 import CIT260_05_JDCheckers_exceptions.MenuException;
 import checkers.MainMenuControl;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -38,7 +40,6 @@ public class MainMenuView extends Menu {
             switch (choice) {
                 case "N":
                     this.mainControl.newGame();
-                    System.out.println("hello");
                     break;
                 case "H":
                     this.mainControl.displayHelpMenu();            

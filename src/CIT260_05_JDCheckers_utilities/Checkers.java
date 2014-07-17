@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class Checkers implements Serializable {
     private static Player player1 = new Player();
     private static Player player2 = new Player();
+    static MainMenuView mainMenu = new MainMenuView();
     
     
     public static Player getPlayer1(){
@@ -50,8 +51,11 @@ public class Checkers implements Serializable {
     private void display(){
         System.out.println("Welcome to Checkers!");
     }
-    private void endGame(){
+    public static void endGame(String player){
         System.out.println("The game is over");
+        System.out.println("Congratulations " +player+ " , you have won the game!");
+        System.out.println("\n\n\n\n");
+        mainMenu.executeCommand();
     }
     /**public void displayHelp(){
         System.out.println(instructions);
@@ -65,14 +69,14 @@ public class Checkers implements Serializable {
         try{
         Checkers myGame = new Checkers();
         myGame.display();
-        MainMenuView mainMenu = new MainMenuView();
         mainMenu.executeCommand();
         }
         catch(UnsupportedOperationException oex){
             throw new GameException("Fatal Error has occured.");
         }
         finally{
-            System.out.println("Shutting down system. Please retart and try again.");
+            System.out.println("Rstarting....");
+            mainMenu.executeCommand();
         }
         /*
         Piece myPiece = new Piece();
@@ -82,8 +86,8 @@ public class Checkers implements Serializable {
         playerOne.isPlayerOne = true;
         Player player2 = new Player();
         GameMenuView gmv = new GameMenuView();  
-        playerOne.getName();
-        player2.getName();
+        playerOne.getNameInput();
+        player2.getNameInput();
         gmv.getInput(playerOne);
         gmv.getInput(player2);
         myBoard.makeBoardHorizLocations();

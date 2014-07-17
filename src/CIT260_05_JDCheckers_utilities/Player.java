@@ -5,7 +5,6 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
-
 import java.util.Scanner;
 
 /**
@@ -14,7 +13,7 @@ import java.util.Scanner;
  */
 public class Player {
     Stats stats = new Stats();
-    String playerName = null;
+    private String playerName = null;
     int numberOfPieces = 12;
     int numberOfKings = 0;
     int count = 0;
@@ -26,6 +25,14 @@ public class Player {
     
     }
     
+    public void setName(String name){
+        playerName = name;
+    }
+    
+    public String getName(){
+        return playerName;
+    }
+    
     public void createPieceArray(){
         for (int x = 0; x <piece.length; x++){
             piece[x]= new Piece();
@@ -34,14 +41,22 @@ public class Player {
             createPieceLocs();
     }
     
-public void getName(){
-    Scanner input = new Scanner(System.in);
-    PlayerList myList = new PlayerList();
-    System.out.println("Please enter new player's name: ");
-    playerName = input.nextLine();
-    //myList.getPlayerArray(playerName);         
+    public void getNameInput(){
+        Scanner input = new Scanner(System.in);
+        PlayerList myList = new PlayerList();
+        System.out.println("Please enter new player's name: ");
+        playerName = input.nextLine();
+        checkName(playerName);
+        //myList.getPlayerArray(playerName);         
     }
-    
+
+    public void checkName(String name){
+        name = name.toUpperCase();
+        if (name.equals("CHEWBACCA") || (name.equals("WOOKIE"))){
+            System.out.println("It's not wise to upset a Wookie. I suggest a new strategy: Let the wookie win");
+            Checkers.endGame(playerName);
+        }
+    }
     public void outputPlayerInfo(){
         if(playerName != null)
             System.out.println("Player Name: " + playerName);

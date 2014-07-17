@@ -49,7 +49,6 @@ public abstract class Menu implements DisplayInfo, Serializable, EnterInfo{
             // get commaned entered
             input = scan.nextLine();
             input = input.trim().toUpperCase();
-            System.out.println(input);
             if(!isValidInput(input)){
                 throw new MenuException("This is not a valid option");
             }
