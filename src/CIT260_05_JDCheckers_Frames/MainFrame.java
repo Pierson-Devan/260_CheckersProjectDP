@@ -5,7 +5,7 @@
  */
 
 package CIT260_05_JDCheckers_Frames;
-
+import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 /**
  *
  * @author Tails2
@@ -78,8 +78,18 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jButtonHelp.setText("Help");
+        jButtonHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHelpActionPerformed(evt);
+            }
+        });
 
         jButtonExit.setText("Exit");
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -167,8 +177,16 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1NewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NewGameActionPerformed
-        // TODO add your handling code here:
+        this.mainControl.newGame();
     }//GEN-LAST:event_jButton1NewGameActionPerformed
+
+    private void jButtonHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHelpActionPerformed
+        this.mainControl.displayHelpMenu(); 
+    }//GEN-LAST:event_jButtonHelpActionPerformed
+
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
