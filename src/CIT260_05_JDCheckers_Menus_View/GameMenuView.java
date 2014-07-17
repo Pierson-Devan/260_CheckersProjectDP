@@ -6,7 +6,6 @@
 
 package CIT260_05_JDCheckers_Menus_View;
 
-import CIT260_05_JDCheckers_exceptions.BoardException;
 import CIT260_05_JDCheckers_exceptions.MenuException;
 import CIT260_05_JDCheckers_utilities.Board;
 import checkers.GameMenuControl;
@@ -71,9 +70,6 @@ public class GameMenuView extends Menu{
         }
         catch(MenuException mex){
             System.out.println("\n" + mex.getMessage());
-        }
-        catch(BoardException bex){
-            System.out.println("\n" + bex.getMessage());
         }
         }while (!input.equals("Q") || !input.equals("T"));
         return checker;

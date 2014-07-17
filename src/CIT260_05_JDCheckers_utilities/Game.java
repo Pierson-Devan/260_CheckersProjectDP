@@ -21,21 +21,21 @@ public class Game implements Serializable {
     
     public void newGame(){
         System.out.println("Player One:");
-        player1.getNameInput();
+        player1.getName();
         player1.isPlayerOne = true;
         player1.createPieceArray();
         System.out.println("Player Two:");
-        player2.getNameInput();
+        player2.getName();
         player2.createPieceArray();
         boolean input;
         boolean player = true;
         do{
-            System.out.println(player1.getName() + ", it is your turn");
+            System.out.println(player1.playerName + ", it is your turn");
             input =gameMenu.executeCommand(player);
             if(input){
                 player = false;
                 input = gameMenu.executeCommand(player);
-                    System.out.println(player2.getName() + ", it is your turn");
+                    System.out.println(player2.playerName + ", it is your turn");
             }
         }
         while (!input);
