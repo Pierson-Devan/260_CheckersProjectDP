@@ -5,16 +5,14 @@
  */
 
 package CIT260_05_JDCheckers_Frames;
-import CIT260_05_JDCheckers_Menus_View.MainMenuView;
+import CIT260_05_JDCheckers_Menu_Control.MainMenuControl;
 /**
  *
  * @author Tails2
  */
 public class MainFrame extends javax.swing.JFrame {
+    MainMenuControl mainControl= new MainMenuControl();
 
-    /**
-     * Creates new form MainFrame
-     */
     public MainFrame() {
         initComponents();
     }

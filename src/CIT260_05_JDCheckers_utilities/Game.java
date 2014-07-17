@@ -23,11 +23,11 @@ public class Game implements Serializable {
     
     public void newGame(){
         System.out.println("Player One:");
-        player1.getName();
+        player1.getNameInput();
         player1.isPlayerOne = true;
         player1.createPieceArray();
         System.out.println("Player Two:");
-        player2.getName();
+        player2.getNameInput();
         player2.createPieceArray();
         boolean input;
         boolean player = true;

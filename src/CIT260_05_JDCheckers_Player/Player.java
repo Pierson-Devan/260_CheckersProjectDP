@@ -34,8 +34,10 @@ public class Player {
         }
             createPieceLocs();
     }
-    
-public void getName(){
+public String getName(){
+    return playerName;
+}
+public void getNameInput(){
     Scanner input = new Scanner(System.in);
     PlayerList myList = new PlayerList();
     System.out.println("Please enter new player's name: ");

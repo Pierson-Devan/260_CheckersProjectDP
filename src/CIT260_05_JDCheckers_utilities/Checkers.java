@@ -11,7 +11,6 @@ import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_exceptions.GameException;
 import java.io.Serializable;
-import java.util.Scanner;
 /**
  *
  * @author Devan and Jennie
@@ -19,6 +18,7 @@ import java.util.Scanner;
 public class Checkers implements Serializable {
     private static Player player1 = new Player();
     private static Player player2 = new Player();
+    private static MainFrame mainFrame;
     
     
     public static Player getPlayer1(){
@@ -68,6 +68,12 @@ public class Checkers implements Serializable {
         Checkers myGame = new Checkers();
         myGame.display();
         MainMenuView mainMenu = new MainMenuView();
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                Checkers.mainFrame = new MainFrame();
+                Checkers.mainFrame.setVisible(true);   
+            }
+        });
         
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
@@ -78,10 +84,6 @@ public class Checkers implements Serializable {
             }
         });
         }
-
-//mainMenu.executeCommand();
-        
-        }
         catch(UnsupportedOperationException oex){
             throw new GameException("Fatal Error has occured.");
         }
@@ -89,8 +91,6 @@ public class Checkers implements Serializable {
             if (Checkers.mainFrame != null){
             Checkers.mainFrame.dispose();
             }
-        
-//System.out.println("Shutting down system. Please retart and try again.");
         }
         /*
         Piece myPiece = new Piece();
@@ -100,8 +100,8 @@ public class Checkers implements Serializable {
         playerOne.isPlayerOne = true;
         Player player2 = new Player();
         GameMenuView gmv = new GameMenuView();  
-        playerOne.getName();
-        player2.getName();
+        playerOne.getNameInput();
+        player2.getNameInput();
         gmv.getInput(playerOne);
         gmv.getInput(player2);
         myBoard.makeBoardHorizLocations();
