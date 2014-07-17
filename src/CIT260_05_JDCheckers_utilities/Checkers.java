@@ -74,15 +74,6 @@ public class Checkers implements Serializable {
                 Checkers.mainFrame.setVisible(true);   
             }
         });
-        
-        java.awt.EventQueue.invokeLater(new Runnable(){
-            public void run(){
-                Checkers.mainFrame = new MainFrame();
-                
-                Checkers.mainFrame.setVisible(true);
-                
-            }
-        });
         }
         catch(UnsupportedOperationException oex){
             throw new GameException("Fatal Error has occured.");
