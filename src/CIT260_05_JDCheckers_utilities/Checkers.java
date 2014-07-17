@@ -52,7 +52,7 @@ public class Checkers implements Serializable {
     private void display(){
         System.out.println("Welcome to Checkers!");
     }
-    private void endGame(String name){
+    private void endGame(String name) throws GameException{
         System.out.println("The game is over");
         System.out.println("Congratulations " +name+ ", you have won");
         systemInitiate();
@@ -64,7 +64,7 @@ public class Checkers implements Serializable {
     /**
      * @param args the command line arguments
      */
-    public void systemInitiate(){
+    public void systemInitiate() throws GameException{
         try{
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
@@ -85,7 +85,7 @@ public class Checkers implements Serializable {
     
     public static void main(String[] args) throws GameException {
         Checkers myGame = new Checkers();
-        this.systemInitiate();
+        myGame.systemInitiate();
         
         /*
         Piece myPiece = new Piece();
