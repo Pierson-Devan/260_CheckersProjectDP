@@ -6,8 +6,9 @@
 
 package CIT260_05_JDCheckers_utilities;
 
-import CIT260_05_JDCheckers_Player.Player;
+import CIT260_05_JDCheckers_Frames.MainFrame;
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
+import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_exceptions.GameException;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -67,13 +68,29 @@ public class Checkers implements Serializable {
         Checkers myGame = new Checkers();
         myGame.display();
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.executeCommand();
+        
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                Checkers.mainFrame = new MainFrame();
+                
+                Checkers.mainFrame.setVisible(true);
+                
+            }
+        });
+        }
+
+//mainMenu.executeCommand();
+        
         }
         catch(UnsupportedOperationException oex){
             throw new GameException("Fatal Error has occured.");
         }
         finally{
-            System.out.println("Shutting down system. Please retart and try again.");
+            if (Checkers.mainFrame != null){
+            Checkers.mainFrame.dispose();
+            }
+        
+//System.out.println("Shutting down system. Please retart and try again.");
         }
         /*
         Piece myPiece = new Piece();
