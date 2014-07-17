@@ -6,6 +6,7 @@
 
 package CIT260_05_JDCheckers_Frames;
 import CIT260_05_JDCheckers_Menu_Control.MainMenuControl;
+import CIT260_05_JDCheckers_utilities.Checkers;
 /**
  *
  * @author Tails2
@@ -175,7 +176,10 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1NewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NewGameActionPerformed
-        this.mainControl.newGame();
+        EnterPlayerNames playerNameFrame = Checkers.getPlayerNameFrame();
+        playerNameFrame.initializeForm();
+        playerNameFrame.setVisible(true);
+        
     }//GEN-LAST:event_jButton1NewGameActionPerformed
 
     private void jButtonHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHelpActionPerformed

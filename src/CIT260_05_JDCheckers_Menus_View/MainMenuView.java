@@ -32,13 +32,12 @@ public class MainMenuView extends Menu {
     @Override
     public void executeCommand(){
         String choice = null;
-        do {
+/*        do {
             try{
             choice = this.getInput();
             switch (choice) {
                 case "N":
                     this.mainControl.newGame();
-                    System.out.println("hello");
                     break;
                 case "H":
                     this.mainControl.displayHelpMenu();            
@@ -54,7 +53,7 @@ public class MainMenuView extends Menu {
             System.out.println("\n" + mex.getMessage());
         }
         } while (!choice.equals("X"));
-
+*/
         return;
     }
     

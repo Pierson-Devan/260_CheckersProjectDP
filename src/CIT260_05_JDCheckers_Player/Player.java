@@ -37,7 +37,11 @@ public class Player {
 public String getName(){
     return playerName;
 }
-public void getNameInput(){
+
+public void setName(String name){
+    playerName = name;
+}
+/*public void getNameInput(){
     Scanner input = new Scanner(System.in);
     PlayerList myList = new PlayerList();
     System.out.println("Please enter new player's name: ");
@@ -45,12 +49,8 @@ public void getNameInput(){
     checkName(playerName);
     //myList.getPlayerArray(playerName);         
     }
+*/
 
-public void checkName(String name){
-    if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
-        System.out.println("It's not wise to upset a Wookie. I suggest a new strategy: Let the Wookie win.");
-    }
-}
     
     public void outputPlayerInfo()throws PlayerException{
         if(playerName != null)

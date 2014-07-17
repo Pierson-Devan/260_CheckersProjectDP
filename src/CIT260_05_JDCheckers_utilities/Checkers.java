@@ -6,6 +6,8 @@
 
 package CIT260_05_JDCheckers_utilities;
 
+import CIT260_05_JDCheckers_Frames.EnterPlayerNames;
+import CIT260_05_JDCheckers_Frames.ErrorPopUp;
 import CIT260_05_JDCheckers_Frames.MainFrame;
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import CIT260_05_JDCheckers_Player.Player;
@@ -18,8 +20,9 @@ import java.io.Serializable;
 public class Checkers implements Serializable {
     private static Player player1 = new Player();
     private static Player player2 = new Player();
-    private static MainFrame mainFrame;
-    
+    private static EnterPlayerNames pNames = new EnterPlayerNames();
+    private static MainFrame mainFrame = new MainFrame();
+    private static ErrorPopUp errorPop = new ErrorPopUp();
     
     public static Player getPlayer1(){
         return Checkers.player1;
@@ -35,6 +38,14 @@ public class Checkers implements Serializable {
         else
             return player2;
     }
+    
+    public static MainFrame getMainFrame(){
+        return Checkers.mainFrame;
+    }
+    public static EnterPlayerNames getPlayerNameFrame(){
+        return Checkers.pNames;
+    }
+
     
     /*
     String playerOneName;
@@ -68,7 +79,6 @@ public class Checkers implements Serializable {
         try{
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
-                Checkers.mainFrame = new MainFrame();
                 Checkers.mainFrame.setVisible(true);   
             }
         });

@@ -6,12 +6,14 @@
 
 package CIT260_05_JDCheckers_Frames;
 
+import CIT260_05_JDCheckers_utilities.Game;
+
 /**
  *
  * @author Tails2
  */
 public class EnterPlayerNames extends javax.swing.JFrame {
-
+    Game game = new Game();
     /**
      * Creates new form EnterPlayerNames
      */
@@ -19,6 +21,10 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    public void initializeForm(){
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +46,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         Player1NameText = new javax.swing.JTextField();
         Player2NameText = new javax.swing.JTextField();
         jpplayertitle = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jFrame1.setTitle("Enter Player Names");
 
@@ -102,6 +109,13 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jpplayertitle.setForeground(new java.awt.Color(255, 255, 255));
         jpplayertitle.setText("Enter the name of the players below:");
 
+        jButton1.setText("Continue");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpplayerbodyLayout = new javax.swing.GroupLayout(jpplayerbody);
         jpplayerbody.setLayout(jpplayerbodyLayout);
         jpplayerbodyLayout.setHorizontalGroup(
@@ -109,17 +123,20 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             .addGroup(jpplayerbodyLayout.createSequentialGroup()
                 .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpplayerbodyLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Player1NameText, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Player2NameText, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpplayerbodyLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(jpplayertitle)))
+                        .addComponent(jpplayertitle))
+                    .addGroup(jpplayerbodyLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addGroup(jpplayerbodyLayout.createSequentialGroup()
+                                .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Player1NameText, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Player2NameText, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jpplayerbodyLayout.setVerticalGroup(
@@ -135,7 +152,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 .addGroup(jpplayerbodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(Player2NameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,21 +170,30 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpplayerbody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpplayerbody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        startGame();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
-
+    public void startGame(){
+        String player1Name = Player1NameText.getText();
+        String player2Name = Player2NameText.getText();
+        game.newGame(player1Name, player2Name);
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Player1NameText;
     private javax.swing.JTextField Player2NameText;
+    private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
@@ -177,4 +205,5 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     private javax.swing.JPanel jpplayerbody;
     private javax.swing.JLabel jpplayertitle;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -5,9 +5,10 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
-import CIT260_05_JDCheckers_Player.PlayerList;
-import CIT260_05_JDCheckers_Player.Player;
+import CIT260_05_JDCheckers_Frames.ErrorPopUp;
 import CIT260_05_JDCheckers_Menus_View.GameMenuView;
+import CIT260_05_JDCheckers_Player.Player;
+import CIT260_05_JDCheckers_Player.PlayerList;
 import java.io.Serializable;
 /**
  *
@@ -18,18 +19,17 @@ public class Game implements Serializable {
     PlayerList playerList = new PlayerList();
     Player player1 = Checkers.getPlayer1();
     Player player2 = Checkers.getPlayer2();
+    ErrorPopUp ePopUp;
     Board board = new Board();
     GameMenuView gameMenu = new GameMenuView(board);
     
-    public void newGame(){
-        System.out.println("Player One:");
-        player1.getNameInput();
+    public void newGame(String name1, String name2){
+        player1.setName(name1);
         player1.isPlayerOne = true;
-        player1.createPieceArray();
-        System.out.println("Player Two:");
-        player2.getNameInput();
-        player2.createPieceArray();
+        player2.setName(name2);
         boolean input;
+        checkName(name1);
+        checkName(name2);
         boolean player = true;
         do{
             System.out.println(player1.playerName + ", it is your turn");
@@ -42,4 +42,11 @@ public class Game implements Serializable {
         }
         while (!input);
     }
+    
+    public void checkName(String name){
+    if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
+        ePopUp = new ErrorPopUp("It's not wise to upset a Wookie. I suggest a new strategy: Let the Wookie win.");
+    }
+}
+    
 }

@@ -21,10 +21,11 @@ public class MainMenuControl implements Serializable, DisplayHelp {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.executeCommand();
     }
-    
+/*    
     public void newGame(){
         Game game = new Game();
         game.newGame();
         
     }
+*/
 }
