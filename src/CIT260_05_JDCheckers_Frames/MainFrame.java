@@ -183,7 +183,8 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1NewGameActionPerformed
 
     private void jButtonHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHelpActionPerformed
-        this.mainControl.displayHelpMenu(); 
+        HelpFrame helpFrame = new HelpFrame();
+        helpFrame.setVisible(true); 
     }//GEN-LAST:event_jButtonHelpActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed

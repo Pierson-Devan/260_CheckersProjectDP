@@ -5,7 +5,7 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
-import CIT260_05_JDCheckers_Frames.ErrorPopUp;
+import CIT260_05_JDCheckers_exceptions.ErrorPopUp;
 import CIT260_05_JDCheckers_Menus_View.GameMenuView;
 import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_Player.PlayerList;
@@ -19,7 +19,7 @@ public class Game implements Serializable {
     PlayerList playerList = new PlayerList();
     Player player1 = Checkers.getPlayer1();
     Player player2 = Checkers.getPlayer2();
-    ErrorPopUp ePopUp;
+    ErrorPopUp ePop;
     Board board = new Board();
     GameMenuView gameMenu = new GameMenuView(board);
     
@@ -44,9 +44,11 @@ public class Game implements Serializable {
     }
     
     public void checkName(String name){
+ /*
     if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
-        ePopUp = new ErrorPopUp("It's not wise to upset a Wookie. I suggest a new strategy: Let the Wookie win.");
-    }
+                ErrorPopUp errorPop = new ErrorPopUp();
+                errorPop.setVisible(true);  
+            }
+*/
 }
-    
 }

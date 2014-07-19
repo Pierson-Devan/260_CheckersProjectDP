@@ -7,7 +7,7 @@
 package CIT260_05_JDCheckers_utilities;
 
 import CIT260_05_JDCheckers_Frames.EnterPlayerNames;
-import CIT260_05_JDCheckers_Frames.ErrorPopUp;
+import CIT260_05_JDCheckers_exceptions.ErrorPopUp;
 import CIT260_05_JDCheckers_Frames.MainFrame;
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import CIT260_05_JDCheckers_Player.Player;
@@ -21,7 +21,7 @@ public class Checkers implements Serializable {
     private static Player player1 = new Player();
     private static Player player2 = new Player();
     private static EnterPlayerNames pNames = new EnterPlayerNames();
-    private static MainFrame mainFrame = new MainFrame();
+    private static MainFrame mainFrame;
     private static ErrorPopUp errorPop = new ErrorPopUp();
     
     public static Player getPlayer1(){
@@ -44,6 +44,10 @@ public class Checkers implements Serializable {
     }
     public static EnterPlayerNames getPlayerNameFrame(){
         return Checkers.pNames;
+    }
+    
+    public static ErrorPopUp getErrorPop(){
+        return Checkers.errorPop;
     }
 
     
@@ -68,6 +72,11 @@ public class Checkers implements Serializable {
         System.out.println("Congratulations " +name+ ", you have won");
         systemInitiate();
     }
+    
+    public static void makeVisible(){
+        errorPop.initializeForm();
+        errorPop.setVisible(true);
+    }
     /**public void displayHelp(){
         System.out.println(instructions);
     }*/
@@ -79,6 +88,7 @@ public class Checkers implements Serializable {
         try{
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
+                Checkers.mainFrame = new MainFrame();
                 Checkers.mainFrame.setVisible(true);   
             }
         });

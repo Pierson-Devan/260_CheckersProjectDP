@@ -187,6 +187,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     public void startGame(){
         String player1Name = Player1NameText.getText();
         String player2Name = Player2NameText.getText();
+        this.dispose();
         game.newGame(player1Name, player2Name);
         
     }
