@@ -13,7 +13,7 @@ import javax.swing.SwingUtilities;
  * @author Devan
  */
 public class HelpFrame extends javax.swing.JFrame {
-String board = "The game board for Checkers consists of a two-color grid that"
+private String board = "The game board for Checkers consists of a two-color grid that"
                 + "\n is 8 rows by 8 columns. Players begin with twelve pieces"
                 + "\n occupying the white tiles closest to them. Players move"
                 + "\n diagonally only on the white tiles. They can move one"
@@ -22,7 +22,7 @@ String board = "The game board for Checkers consists of a two-color grid that"
                 + "\n to them. Players move diagonally only on the white "
                 + "\n tiles. They can move one space, or jump one opposing"
                 + "\n player's piece.";
-String game = "This is a game of checkers. You will be playing against the"
+private String game = "This is a game of checkers. You will be playing against the"
             + "\n other player.The object of the game is to capture"
             + "\n all your opponents's pieces.You can only move your pieces"
             + "\n diagonally in the forward direction. You take your opponent's "
@@ -31,11 +31,11 @@ String game = "This is a game of checkers. You will be playing against the"
             + "\n king-piece, which may move diagonally in either the forward "
             + "\n or backwards direction."
             + "\n Let's play!";
-String location = "Any location on the board where a player can move.";
-String marker = "A symbol that \"marks\" the locations on the board that"
+private String location = "Any location on the board where a player can move.";
+private String marker = "A symbol that \"marks\" the locations on the board that"
                 + "\n are occupied by a player. The default markers will"
                 + "\n be \"X\" and \"O\".";
-String player = "A player manually takes their turn by moving one of their "
+private String player = "A player manually takes their turn by moving one of their "
                 + "\n pieces on the board. Before the player has a king, he can"
                 + "\n only move forward on the board.";
     /**
