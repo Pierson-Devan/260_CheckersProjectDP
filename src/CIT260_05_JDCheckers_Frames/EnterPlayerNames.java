@@ -6,7 +6,10 @@
 
 package CIT260_05_JDCheckers_Frames;
 
+import CIT260_05_JDCheckers_exceptions.GameException;
 import CIT260_05_JDCheckers_utilities.Game;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -177,16 +180,21 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        startGame();
+        try {
+            startGame();
+        } catch (GameException ex) {
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
-    public void startGame(){
+    public void startGame() throws GameException{
         String player1Name = Player1NameText.getText();
         String player2Name = Player2NameText.getText();
+        Game game = new Game();
         this.dispose();
         game.newGame(player1Name, player2Name);
         

@@ -7,7 +7,6 @@
 package CIT260_05_JDCheckers_utilities;
 
 import CIT260_05_JDCheckers_Frames.EnterPlayerNames;
-import CIT260_05_JDCheckers_exceptions.ErrorPopUp;
 import CIT260_05_JDCheckers_Frames.MainFrame;
 import CIT260_05_JDCheckers_Menus_View.MainMenuView;
 import CIT260_05_JDCheckers_Player.Player;
@@ -18,11 +17,15 @@ import java.io.Serializable;
  * @author Devan and Jennie
  */
 public class Checkers implements Serializable {
+    private static Checkers myGame = new Checkers();
     private static Player player1 = new Player();
     private static Player player2 = new Player();
     private static EnterPlayerNames pNames = new EnterPlayerNames();
     private static MainFrame mainFrame;
-    private static ErrorPopUp errorPop = new ErrorPopUp();
+    
+    public static Checkers getGame(){
+        return Checkers.myGame;
+    }
     
     public static Player getPlayer1(){
         return Checkers.player1;
@@ -46,11 +49,7 @@ public class Checkers implements Serializable {
         return Checkers.pNames;
     }
     
-    public static ErrorPopUp getErrorPop(){
-        return Checkers.errorPop;
-    }
-
-    
+       
     /*
     String playerOneName;
     String playerTwoName;
@@ -67,23 +66,13 @@ public class Checkers implements Serializable {
     private void display(){
         System.out.println("Welcome to Checkers!");
     }
-    private void endGame(String name) throws GameException{
+    public void endGame(String name) throws GameException{
         System.out.println("The game is over");
         System.out.println("Congratulations " +name+ ", you have won");
         systemInitiate();
     }
     
-    public static void makeVisible(){
-        errorPop.initializeForm();
-        errorPop.setVisible(true);
-    }
-    /**public void displayHelp(){
-        System.out.println(instructions);
-    }*/
-    //displayHelp() moved to HelpMenuView
-    /**
-     * @param args the command line arguments
-     */
+    
     public void systemInitiate() throws GameException{
         try{
         java.awt.EventQueue.invokeLater(new Runnable(){
@@ -104,7 +93,6 @@ public class Checkers implements Serializable {
     }
     
     public static void main(String[] args) throws GameException {
-        Checkers myGame = new Checkers();
         myGame.systemInitiate();
         
         /*

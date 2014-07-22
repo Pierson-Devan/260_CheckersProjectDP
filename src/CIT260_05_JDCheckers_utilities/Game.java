@@ -5,10 +5,12 @@
  */
 
 package CIT260_05_JDCheckers_utilities;
-import CIT260_05_JDCheckers_exceptions.ErrorPopUp;
+import CIT260_05_JDCheckers_Frames.ErrorPopUp;
+import CIT260_05_JDCheckers_Frames.GameFrame;
 import CIT260_05_JDCheckers_Menus_View.GameMenuView;
 import CIT260_05_JDCheckers_Player.Player;
 import CIT260_05_JDCheckers_Player.PlayerList;
+import CIT260_05_JDCheckers_exceptions.GameException;
 import java.io.Serializable;
 /**
  *
@@ -22,33 +24,34 @@ public class Game implements Serializable {
     ErrorPopUp ePop;
     Board board = new Board();
     GameMenuView gameMenu = new GameMenuView(board);
+    Checkers myGame = Checkers.getGame();
     
-    public void newGame(String name1, String name2){
+    
+    public void newGame(String name1, String name2) throws GameException{
         player1.setName(name1);
         player1.isPlayerOne = true;
         player2.setName(name2);
-        boolean input;
-        checkName(name1);
-        checkName(name2);
-        boolean player = true;
-        do{
-            System.out.println(player1.playerName + ", it is your turn");
-            input =gameMenu.executeCommand(player);
-            if(input){
-                player = false;
-                input = gameMenu.executeCommand(player);
-                    System.out.println(player2.playerName + ", it is your turn");
-            }
+        if(!checkName(name1))
+            return;
+        if(!checkName(name2))
+            return;
+        GameFrame frame1 = new GameFrame();
+        frame1.display(name1);
+        frame1.setVisible(true);
+    }
+        
+    
+    public boolean checkName(String name) throws GameException{
+        if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
+                    createPopUp(name);
+                    return false;
         }
-        while (!input);
+        return true;
     }
     
-    public void checkName(String name){
- /*
-    if(name.compareToIgnoreCase("Wookie") == 0 || (name.compareToIgnoreCase("Chewbacca") == 0)){
-                ErrorPopUp errorPop = new ErrorPopUp();
-                errorPop.setVisible(true);  
-            }
-*/
-}
+    public void createPopUp(String name){
+        ErrorPopUp ePop = new ErrorPopUp();
+        ePop.setVisible(true);
+        ePop.setName(name);
+    }
 }
