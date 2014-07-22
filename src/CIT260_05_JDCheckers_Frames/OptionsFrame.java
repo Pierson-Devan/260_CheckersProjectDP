@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Devan
  */
-public class HelpFrame extends javax.swing.JFrame {
+public class OptionsFrame extends javax.swing.JFrame {
 private String board = "The game board for Checkers consists of a two-color grid that"
                 + "\n is 8 rows by 8 columns. Players begin with twelve pieces"
                 + "\n occupying the white tiles closest to them. Players move"
@@ -41,7 +41,7 @@ private String player = "A player manually takes their turn by moving one of the
     /**
      * Creates new form HelpFrame
      */
-    public HelpFrame() {
+    public OptionsFrame() {
         initComponents();
     }
 
@@ -56,11 +56,10 @@ private String player = "A player manually takes their turn by moving one of the
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButtonBoard = new javax.swing.JButton();
-        jButtonPlayer = new javax.swing.JButton();
-        jButtonMarker = new javax.swing.JButton();
-        jButtonGame = new javax.swing.JButton();
-        jButtonLocation = new javax.swing.JButton();
+        jButtonSound = new javax.swing.JButton();
+        jButtonWinning = new javax.swing.JButton();
+        jButtonTimed = new javax.swing.JButton();
+        jButtonColorScheme = new javax.swing.JButton();
         jButtonQuit = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
@@ -73,38 +72,31 @@ private String player = "A player manually takes their turn by moving one of the
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 204));
 
-        jButtonBoard.setText("The Board");
-        jButtonBoard.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSound.setText("Turn Sound On");
+        jButtonSound.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBoardActionPerformed(evt);
+                jButtonSoundActionPerformed(evt);
             }
         });
 
-        jButtonPlayer.setText("A Player");
-        jButtonPlayer.addActionListener(new java.awt.event.ActionListener() {
+        jButtonWinning.setText("Who is winning?");
+        jButtonWinning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPlayerActionPerformed(evt);
+                jButtonWinningActionPerformed(evt);
             }
         });
 
-        jButtonMarker.setText("A Marker");
-        jButtonMarker.addActionListener(new java.awt.event.ActionListener() {
+        jButtonTimed.setText("Timed Game");
+        jButtonTimed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMarkerActionPerformed(evt);
+                jButtonTimedActionPerformed(evt);
             }
         });
 
-        jButtonGame.setText("The Game");
-        jButtonGame.addActionListener(new java.awt.event.ActionListener() {
+        jButtonColorScheme.setText("Color Scheme");
+        jButtonColorScheme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGameActionPerformed(evt);
-            }
-        });
-
-        jButtonLocation.setText("A Location");
-        jButtonLocation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLocationActionPerformed(evt);
+                jButtonColorSchemeActionPerformed(evt);
             }
         });
 
@@ -122,11 +114,10 @@ private String player = "A player manually takes their turn by moving one of the
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonLocation, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addComponent(jButtonPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addComponent(jButtonMarker, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addComponent(jButtonGame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(jButtonSound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonColorScheme, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(jButtonWinning, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(jButtonTimed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                     .addComponent(jButtonQuit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -134,24 +125,21 @@ private String player = "A player manually takes their turn by moving one of the
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButtonBoard)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonGame)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonLocation)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonMarker)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonPlayer)
-                .addGap(18, 18, 18)
+                .addComponent(jButtonSound)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonTimed)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonColorScheme)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonWinning)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jButtonQuit)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
-        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Help Menu");
+        jTextField1.setText("Options Menu");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -172,11 +160,8 @@ private String player = "A player manually takes their turn by moving one of the
             .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
-        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -189,7 +174,7 @@ private String player = "A player manually takes their turn by moving one of the
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -198,14 +183,11 @@ private String player = "A player manually takes their turn by moving one of the
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addGap(23, 23, 23))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(51, Short.MAX_VALUE))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,7 +208,7 @@ private String player = "A player manually takes their turn by moving one of the
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButtonBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBoardActionPerformed
+    private void jButtonSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSoundActionPerformed
         SwingUtilities.invokeLater(new Runnable(){
         @Override
         public void run(){
@@ -234,9 +216,9 @@ private String player = "A player manually takes their turn by moving one of the
             jTextArea1.append(board);
         }
     });
-    }//GEN-LAST:event_jButtonBoardActionPerformed
+    }//GEN-LAST:event_jButtonSoundActionPerformed
 
-    private void jButtonGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGameActionPerformed
+    private void jButtonTimedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTimedActionPerformed
         SwingUtilities.invokeLater(new Runnable(){
         @Override
         public void run(){
@@ -244,9 +226,9 @@ private String player = "A player manually takes their turn by moving one of the
             jTextArea1.append(game);
         }
     });
-    }//GEN-LAST:event_jButtonGameActionPerformed
+    }//GEN-LAST:event_jButtonTimedActionPerformed
 
-    private void jButtonLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLocationActionPerformed
+    private void jButtonColorSchemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColorSchemeActionPerformed
         SwingUtilities.invokeLater(new Runnable(){
         @Override
         public void run(){
@@ -254,23 +236,13 @@ private String player = "A player manually takes their turn by moving one of the
             jTextArea1.append(location);
         }
     });
-    }//GEN-LAST:event_jButtonLocationActionPerformed
+    }//GEN-LAST:event_jButtonColorSchemeActionPerformed
 
     private void jButtonQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButtonQuitActionPerformed
 
-    private void jButtonPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayerActionPerformed
-        SwingUtilities.invokeLater(new Runnable(){
-        @Override
-        public void run(){
-            jTextArea1.setText(null);
-            jTextArea1.append(player);
-        }
-    });
-    }//GEN-LAST:event_jButtonPlayerActionPerformed
-
-    private void jButtonMarkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarkerActionPerformed
+    private void jButtonWinningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonWinningActionPerformed
         SwingUtilities.invokeLater(new Runnable(){
         @Override
         public void run(){
@@ -278,7 +250,7 @@ private String player = "A player manually takes their turn by moving one of the
             jTextArea1.append(marker);
         }
     });
-    }//GEN-LAST:event_jButtonMarkerActionPerformed
+    }//GEN-LAST:event_jButtonWinningActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,12 +258,11 @@ private String player = "A player manually takes their turn by moving one of the
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBoard;
-    private javax.swing.JButton jButtonGame;
-    private javax.swing.JButton jButtonLocation;
-    private javax.swing.JButton jButtonMarker;
-    private javax.swing.JButton jButtonPlayer;
+    private javax.swing.JButton jButtonColorScheme;
     private javax.swing.JButton jButtonQuit;
+    private javax.swing.JButton jButtonSound;
+    private javax.swing.JButton jButtonTimed;
+    private javax.swing.JButton jButtonWinning;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
