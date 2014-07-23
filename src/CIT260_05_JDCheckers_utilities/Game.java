@@ -36,7 +36,7 @@ public class Game implements Serializable {
         if(!checkName(name2))
             return;
         GameFrame frame1 = new GameFrame();
-        frame1.display(name1);
+        frame1.display(player1.isPlayerOne);
         frame1.setVisible(true);
     }
         

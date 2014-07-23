@@ -26,6 +26,7 @@ public class Checkers implements Serializable {
     public static Checkers getGame(){
         return Checkers.myGame;
     }
+   
     
     public static Player getPlayer1(){
         return Checkers.player1;
