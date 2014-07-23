@@ -108,7 +108,10 @@ void unavailableBoardLocations(){
             System.out.println(player.piece[pieceId].locationVert);
             horizLoc = getPieceHorizInput();
             vertLoc = getPieceVertInput();
-            System.out.println(horizLoc + " " + vertLoc);       
+            System.out.println(horizLoc + " " + vertLoc); 
+            if(isFriendly(horizLoc, vertLoc, playerType))
+                valid = true;
+            
             if (horizLoc <9 && horizLoc > 0){
                 if(vertLoc < 9 && horizLoc > 0){
                     if(player.isPlayerOne == true){
@@ -129,7 +132,11 @@ void unavailableBoardLocations(){
             }
             else
             System.out.println("Invalid move. Please try again");
-        }    
+        }
+        if(isEnemy(horizLoc, vertLoc, playerType)){
+            capturePiece(playerType, horizLoc, vertLoc);
+            return;
+        }
         System.out.println("Valid move. Piece number " +pieceId+ " will move from "
                 +pieceCurrentHorizLoc+ ", " +pieceCurrentVertLoc+ " to " +horizLoc
                 +", " +vertLoc);
@@ -172,6 +179,41 @@ void unavailableBoardLocations(){
             if(!(vLoc >=1)||(vLoc <= 8))
                 throw new BoardException("Error: Invalid Vertical Location entered. Location must be between 1 and 8");
             return vLoc;
+    }
+    
+    private boolean isFriendly(int hLoc, int vLoc, boolean playerType){
+        Player thisPlayer = Checkers.getPlayer(playerType);
+        for (int x = 0; x < thisPlayer.piece.length; x++){
+            if(thisPlayer.piece[x].locationHori == hLoc && (thisPlayer.piece[x].locationVert == vLoc))
+                return false;
+            
+        }
+        return true;
+    }
+    
+    private boolean isEnemy(int hLoc, int vLoc, boolean playerType){
+         Player thatPlayer = Checkers.getPlayer(!playerType);
+        for (int x = 0; x < thatPlayer.piece.length; x++){
+            if(thatPlayer.piece[x].locationHori == hLoc && (thatPlayer.piece[x].locationVert == vLoc))
+                return true;           
+        }
+        return false;
+    }
+    
+    private void capturePiece(boolean playerType, int hLoc, int vLoc){
+        Player enemy = Checkers.getPlayer(playerType);
+        Player thisPlayer = Checkers.getPlayer(playerType);
+        System.out.println("You can not move to that spot because of an enemy piece. Commense attack!");
+        enemy.numberOfPieces --;
+        for (int x=0; x < enemy.piece.length; x++){
+            if(enemy.piece[x].locationHori == hLoc && (enemy.piece[x].locationVert == vLoc)){
+                enemy.piece[x].isCaptured = true;
+                enemy.piece[x].locationHori = 0;
+                enemy.piece[x].locationVert = 0;
+                continue;
+            }
+        }
+        
     }
 }
     

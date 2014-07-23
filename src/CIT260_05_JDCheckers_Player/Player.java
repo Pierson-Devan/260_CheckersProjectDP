@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Devan and Jennie
  */
 public class Player {
-    public Stats stats = new Stats();
+    public static Stats stats = new Stats();
     public String playerName = null;
     public int numberOfPieces = 12;
     public int numberOfKings = 0;
@@ -27,7 +27,7 @@ public class Player {
     
     }
     
-    public void createPieceArray(){
+    public void createPieceArray(){       
         for (int x = 0; x <piece.length; x++){
             piece[x]= new Piece();
             piece[x].pieceName= x;
@@ -36,6 +36,9 @@ public class Player {
     }
 public String getName(){
     return playerName;
+}
+public static Stats getStats(){
+    return stats;
 }
 
 public void setName(String name){
@@ -137,7 +140,19 @@ public void setName(String name){
             }
         }
         else{
-            System.out.println("Under Construction in createPieceLocs");
+            counter = 8;
+            while (marker < 12){
+                for (int x = 1; x <= 4; x ++){
+                    if(post > 8){
+                        post -= 8;
+                    }
+                    piece[marker].locationVert = counter;
+                    piece[marker].locationHori = post;
+                    marker ++;
+                    post += 2;
+                }
+                counter --;
+            }
         }
     }
     
